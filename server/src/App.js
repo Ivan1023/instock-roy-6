@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Main from './components/main-landing/main'
+import Main from './components/main/main'
 
 
 function App() {
