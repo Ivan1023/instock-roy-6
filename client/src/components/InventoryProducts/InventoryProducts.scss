@@ -1,0 +1,12 @@
+@import '../../style/base.scss';
+
+.main__content-list {
+
+    &__titles {
+        display: none;
+
+        @include tablet-size {
+            @include flex-display-row;
+        }
+    }
+}
