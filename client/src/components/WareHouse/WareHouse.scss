@@ -2,20 +2,39 @@
 
 .main__content-list {
 
+  &__row {
+    @include tablet-size {
+      @include flex-display-row;
+      justify-content: space-between;
+      border-bottom: 1px solid $divider-color;
+      margin-top: 32px;
+      padding-bottom: 24px;
+    }
+  }
+  
   &__address {
     @include flex-display-column;
     padding-bottom: 24px;
+
+    @include tablet-size {
+      padding-bottom: 0;
+    }
 
     &-title {
       @include subheader-mobile-style;
 
       @include tablet-size {
-        @include header2-tablet-style;
+        @include subheader-tablet-style;
       }
     }
 
     &:last-child {
         border-bottom: 1px solid $divider-color;
+
+        @include tablet-size {
+          border-bottom: none;
+          width: 30%;
+        }
     }
 
   }

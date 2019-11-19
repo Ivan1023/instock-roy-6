@@ -25,6 +25,7 @@
     &__title {
       @include header-mobile-style;
       margin-bottom: 16px;
+      text-transform: capitalize;
 
       @include tablet-size {
         @include header-tablet-style;
@@ -50,7 +51,7 @@
       }
 
       @include tablet-size {
-          width: 40%;
+          width: 35%;
       }
     }
   }
