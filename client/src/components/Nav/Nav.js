@@ -5,19 +5,18 @@ import logo from '../../assets/Logo/Logo-instock.svg'
 
 
 
-export default class Nav extends React.Component{
-    render(){
+export default class Nav extends React.Component {
+    render() {
         return (
-            <div className="nav">
+            <header className="nav">
                 <div className="nav__logo-container">
                     <img className="nav__logo" src={logo} alt="instock logo"></img>
                 </div>
                 <div className="nav__links-container">
                     <Link className="nav__inventory-link nav__active-link">Inventory</Link>
-                    <Link className="nav__location-link">Locations</Link>
+                    <Link to="/" className="nav__location-link">Locations</Link>
                 </div>
-            </div>
-            
+            </header>
         )
     }
 }
