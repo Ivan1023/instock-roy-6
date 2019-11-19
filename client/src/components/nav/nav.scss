@@ -1,0 +1,42 @@
+@import '../../style/base.scss';
+@import '../../style/mixins.scss';
+
+.nav{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    background-color:$black-text-color;
+    color:$white-text-color;
+
+    &__logo-container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding:16px 0px;
+
+
+    }
+    &__logo{
+
+    }
+
+    &__links-container{
+        width:100%;
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    &__inventory-link{
+        text-decoration: none;
+        color:$white-text-color;
+
+    }
+
+    &__location-link{
+        text-decoration: none;
+        color:$white-text-color;
+    }
+
+}
