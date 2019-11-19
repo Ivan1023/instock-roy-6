@@ -7,7 +7,6 @@ class LocationsPage extends React.Component {
     render() {
         return (
             <>
-                <Nav />
                 <main>
                     <section className="main__content">
                         <article className="main__content-header">
