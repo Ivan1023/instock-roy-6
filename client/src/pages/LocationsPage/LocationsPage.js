@@ -1,9 +1,39 @@
 import React from 'react';
 import './LocationsPage.scss';
 import WareHouse from '../../components/WareHouse/WareHouse';
-import Nav from '../../components/Nav/Nav';
+import Modal from 'react-modal';
+import WareHouseModal from '../../components/WareHouseModal/WareHouseModal'
+
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
+
+//   Modal.setAppElement('LocationsPage')
 
 class LocationsPage extends React.Component {
+
+    state={
+        modalIsOpen:false
+    }
+
+    openModal=()=> {
+        console.log("you clicked the open modal")
+        this.setState({modalIsOpen: true});
+      }
+     
+
+      closeModal=()=>{
+        this.setState({modalIsOpen: false});
+      }
+
+
     render() {
         return (
             <>
@@ -15,6 +45,18 @@ class LocationsPage extends React.Component {
                         </article>
                         <WareHouse />
                     </section>
+                    
+                    <button onClick={this.openModal}>ModalTest</button>
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onAfterOpen={this.afterOpenModal}
+                        onRequestClose={this.closeModal}
+                        // style={customStyles}
+                        // subtitle={this.subtitle}
+                        >
+                        
+                        <WareHouseModal/>
+                    </Modal>
                 </main>
             </>
         )
