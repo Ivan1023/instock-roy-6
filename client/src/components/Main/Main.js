@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../nav/nav.js'
+import Nav from '../nav/Nav.js'
 
 class Main extends React.Component {
     render() {
@@ -7,7 +7,6 @@ class Main extends React.Component {
         return(
             <div>
                 <Nav />
-                <p>Hello World</p>
             </div>
         )
     }
