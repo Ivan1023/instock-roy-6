@@ -1,0 +1,19 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    color: $black-text-color;
+
+    ///////// MOBILE VIEW /////////
+    @include pargraph-mobile-style;
+
+    ///////// TABLET VIEW ///////////
+    @include tablet-size {
+      @include pargraph-tablet-style;
+    }
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
