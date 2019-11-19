@@ -18,6 +18,7 @@
     @include tablet-size {
       @include flex-display-row;
       justify-content: space-between;
+      align-items: center;
       margin: 48px 0;
     }
 

@@ -1,0 +1,22 @@
+@import "../../style/base.scss";
+
+.main__content-list {
+
+  &__address {
+    @include flex-display-column;
+    padding-bottom: 24px;
+
+    &-title {
+      @include subheader-mobile-style;
+
+      @include tablet-size {
+        @include header2-tablet-style;
+      }
+    }
+
+    &:last-child {
+        border-bottom: 1px solid $divider-color;
+    }
+
+  }
+}
