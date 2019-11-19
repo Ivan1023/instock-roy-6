@@ -1,108 +1,56 @@
 @import "../../style/base.scss";
 
 .main__content {
-    margin: 0 16px;
+  margin: 0 16px;
 
-    @include tablet-size {
-        margin: 0 24px;
-    }
+  @include tablet-size {
+    margin: 0 24px;
+  }
 
-    @include desktop-size {
-        margin: 0 180px;
-    }
+  @include desktop-size {
+    margin: 0 180px;
+  }
 
   &-header {
-      @include flex-display-column;
-      margin: 32px 0;
+    @include flex-display-column;
+    margin: 32px 0;
 
-      @include tablet-size {
-          @include flex-display-row;
-      }
+    @include tablet-size {
+      @include flex-display-row;
+      justify-content: space-between;
+      margin: 48px 0;
+    }
 
     &__title {
       @include header-mobile-style;
       margin-bottom: 16px;
+
+      @include tablet-size {
+        @include header-tablet-style;
+        margin: 0;
+      }
     }
 
     &__searchInput {
       width: 100%;
-      padding: 1.30rem;
+      padding: 1.3rem;
       border-radius: 5px;
       border: 1px solid $divider-color;
       background-image: url("../../assets/Icons/SVG/Icon-search.svg");
       text-indent: 10%;
       background-position: 5% 50%;
       background-repeat: no-repeat;
+
       &::placeholder {
         color: $black-text-color;
       }
       &:hover {
         border-color: $instock-blue-color;
       }
+
+      @include tablet-size {
+          width: 40%;
+      }
     }
   }
 }
-
-// &__form {
-//     width: 100%;
-
-//     @include tablet-size {
-//       @include flex-display-row;
-//       justify-content: flex-end;
-//     }
-
-//     &-input {
-//       width: 100%;
-//       padding: 0.85rem;
-//       border: $border-style; //read the variables.scss
-//       border-radius: 0.25rem;
-//       background-image: url("../../assets/Icons/SVG/Icon-search.svg");
-//       text-indent: 10%;
-//       background-position: 5% 50%;
-//       background-repeat: no-repeat;
-//       &::placeholder {
-//         color: $black-text-color;
-//       }
-//       &:hover {
-//         border-color: $button-color;
-//       }
-//     }
-
-//     &-div {
-//       @include flex-display-row;
-//       justify-content: space-between;
-//       margin-top: 8px;
-//       margin-bottom: 16px;
-
-//       @include tablet-size {
-//         margin: 0;
-//       }
-//     }
-
-//     &-linkButton {
-//       width: 100%;
-//       text-decoration: none;
-//       margin-right: 16px;
-
-//       @include tablet-size {
-//         margin: 0 24px;
-//       }
-
-//       &__button {
-//         @include button-style;
-//         background-image: url("../../assets/Icons/SVG/Icon-upload.svg");
-//         text-indent: 10%;
-//         background-position: 33% 50%;
-//         background-repeat: no-repeat;
-//         &:hover {
-//           background-color: $hover-button-color;
-//         }
-
-//         @include tablet-size {
-//           padding: 12px 23px;
-//           text-indent: 15%;
-//           background-position: 15% 50%;
-//         }
-//       }
-//     }
-//   }
