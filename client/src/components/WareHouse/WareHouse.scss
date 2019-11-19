@@ -1,14 +1,32 @@
 @import "../../style/base.scss";
 
 .main__content-list {
+  border-bottom: 1px solid $divider-color;
+  margin-bottom: 24px;
+
+  @include desktop-size {
+    @include flex-display-row;
+    justify-content: space-between;
+     padding-bottom: 24px;
+  }
 
   &__row {
     @include tablet-size {
       @include flex-display-row;
       justify-content: space-between;
-      border-bottom: 1px solid $divider-color;
-      margin-top: 32px;
-      padding-bottom: 24px;
+      margin-bottom: 32px;
+      
+      &:nth-child(2) {
+        margin-bottom: 24px;
+      }
+    }
+
+    @include desktop-size {
+      margin-bottom: 0;
+
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -29,21 +47,34 @@
     }
 
     &:nth-child(3) {
-        border-bottom: 1px solid $divider-color;
-
-        @include tablet-size {
-          border-bottom: none;
-          width: 30%;
-        }
+      @include tablet-size {
+        width: 30%;
+      }
     }
-
   }
 
-  &__tabletIcon {
+  &__arrowIcon {
     @include tablet-size {
       background-image: url(../../assets/Icons/SVG/Icon-arrow-right.svg);
       background-repeat: no-repeat;
-      width: 5%;
+      margin-top: 14px;
+      width: 11px;
+      height: 18px;
+    }
+  }
+
+  &__tabletIcon {
+    @include desktop-size {
+      display: none;
+    }
+  }
+
+  &__desktopIcon {
+    @include tablet-size {
+      display: none;
+    }
+    @include desktop-size {
+      display: block;
     }
   }
 }
