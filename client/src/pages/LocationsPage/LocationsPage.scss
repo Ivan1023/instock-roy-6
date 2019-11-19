@@ -53,6 +53,10 @@
       @include tablet-size {
           width: 35%;
       }
+
+      @include desktop-size {
+        width: 24%;
+      }
     }
   }
 }
