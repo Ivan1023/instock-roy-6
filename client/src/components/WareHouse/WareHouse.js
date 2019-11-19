@@ -5,9 +5,13 @@ class WareHouse extends React.Component {
     render() {
         return (
             <article className="main__content-list">
-                <div className="main__content-list__address">
-                    <h2 className="main__content-list__address-title">Warehouse Number 1</h2>
-                    <span>469 King St W, Toronto, ON</span>
+                <div className="main__content-list__row">
+                    <div className="main__content-list__address">
+                        <h2 className="main__content-list__address-title">Warehouse Number 1</h2>
+                        <span>469 King St W, Toronto, ON</span>
+                    </div>
+                    <div className="main__content-list__tabletIcon">
+                    </div>
                 </div>
                 <div className="main__content-list__row">
                     <div className="main__content-list__address">
