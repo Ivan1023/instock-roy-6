@@ -3,6 +3,7 @@ import './LocationsPage.scss';
 import WareHouse from '../../components/WareHouse/WareHouse';
 
 class LocationsPage extends React.Component {
+
     render() {
         return (
             <>
