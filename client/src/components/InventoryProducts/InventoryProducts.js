@@ -7,7 +7,7 @@ class InventoryProducts extends React.Component {
         return (
             <article className="main__list">
                 <div className="main__list-titles">
-                    <span>ITEM</span>
+                    <span>Item</span>
                     <span>LAST ORDERED</span>
                     <span>LOCATION</span>
                     <span>QUANTITY</span>
