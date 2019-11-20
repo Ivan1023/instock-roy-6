@@ -1,7 +1,6 @@
 import React from 'react';
 import './LocationsPage.scss';
 import WareHouse from '../../components/WareHouse/WareHouse';
-import Nav from '../../components/Nav/Nav';
 
 class LocationsPage extends React.Component {
     render() {

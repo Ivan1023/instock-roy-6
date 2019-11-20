@@ -13,7 +13,7 @@ export default class Nav extends React.Component {
                     <img className="nav__logo" src={logo} alt="instock logo"></img>
                 </div>
                 <div className="nav__links-container">
-                    <Link className="nav__inventory-link nav__active-link">Inventory</Link>
+                    <Link to="/inventory" className="nav__inventory-link nav__active-link">Inventory</Link>
                     <Link to="/" className="nav__location-link">Locations</Link>
                 </div>
             </header>
