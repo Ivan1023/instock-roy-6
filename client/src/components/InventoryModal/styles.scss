@@ -13,6 +13,10 @@ body {
 
         @include tablet-size{
             @include header-tablet-style;
+<<<<<<< Updated upstream
+=======
+            margin: 0 0 0 0;
+>>>>>>> Stashed changes
         }
     }
 
