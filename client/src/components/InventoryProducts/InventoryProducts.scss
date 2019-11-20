@@ -17,35 +17,50 @@
     @include tablet-size {
       @include flex-display-row;
     }
-    & span {
+
+    &__head {
         @include tablet-size {
-            @include subheader-tablet-style;
-            color: $silver-color;
-            // text-align: center;
-            text-transform: uppercase;
-            font-size: 13px;
-            width: 26%;
-            padding-left: 33px;
-            
+            width: 23%;
+            text-align: center;
             &:first-child {
-            width: 38%;
-            text-align: left;
-            padding: 0;
-            margin-right: 4%;
-            }
-            &:last-child {
-            margin-right: 0;
-            }
-        }
-        @include desktop-size {
-            width: 15%;
-            
-            &:first-child {
-            width: 32%;
+                width: 40%;
+                text-align: left;
+                margin-right: 15px;
             }
         }
     }
-}
+
+    & span {
+      @include tablet-size {
+        @include subheader-tablet-style;
+        color: $silver-color;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 13px;
+        width: 25%;
+        padding-right: 15px;
+
+        &:first-child {
+          width: 48%;
+          text-align: left;
+          padding: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+          padding: 0;
+        }
+      }
+      @include desktop-size {
+        padding-left: 33px;
+        width: 15%;
+
+        &:first-child {
+          margin-right: 4%;
+          width: 32%;
+        }
+      }
+    }
+  }
 
   &-items {
     @include flex-display-column;
@@ -77,13 +92,13 @@
       }
 
       @include desktop-size {
-          margin-top: 5%;
-          width: 15%;
-          text-align: left;
-          &:nth-child(2) {
-            margin-right: 0;
-            width: 40%;
-          }
+        margin-top: 5%;
+        width: 15%;
+        text-align: left;
+        &:nth-child(2) {
+          margin-right: 0;
+          width: 40%;
+        }
       }
 
       &-title {
@@ -106,7 +121,7 @@
       }
 
       @include desktop-size {
-          margin-top: 4.8%;
+        margin-top: 4.8%;
       }
     }
   }
