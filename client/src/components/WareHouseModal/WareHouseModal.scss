@@ -40,25 +40,49 @@
         background-color:$grey-color;
         border:1px solid $divider-color;
         border-radius:3px;
-        padding:5%;
+        font-size:1.1rem;
+        padding:3%;
         width:100%;
+        height:40px;
+
     }
 
     &__categories-input{
         width:100%;
-        padding:4%;
+        padding:3%;
+        resize:none;
+        font-family: Avenir Next-regular;
+        background-color:$grey-color;
+        border:1px solid $divider-color;
+        border-radius:3px;
+        font-size:1.1rem;
+        height:70px;
     }
 
     &__warehouse-input{
         background-color:$grey-color;
         border:1px solid $divider-color;
         border-radius:3px;
-        padding:5%;
+        padding:3%;
+        font-size:1.1rem;
         width:100%;
+        height:40px;
+
+    }
+
+   
+    &__save-button{
+        color:$white-text-color;
+        background-color:$instock-blue-color;
+        border:none;
+        padding:10px 15%;
+        border-radius:4px;
+        width:100%;
+
     }
 
     &__buttons-container{
-        margin-top:20px;
+        margin-top:30px;
         display:flex;
         flex-direction:column-reverse;
         justify-content: flex-end;
@@ -69,91 +93,100 @@
         color:$white-text-color;
         background-color:$instock-blue-color;
         border:1px transparent white;
-        padding:8px 15%;
+        padding:11px 15%;
         border-radius:4px;
-        margin-left:5%;
+        width:100%;
+        font-size:1.1rem;
+
     }
 
     &__cancel-button{
-        margin-top:20px;
+        margin-top:10px;
+        padding:8px 0%;
+        width:100%;
+        color:$instock-blue-color;
+        font-size:1.1rem;
 
-        
+
     }
 
     @include tablet-size(){
-        &__form{
-            margin:0;
-        }
-        &__title{
-            font-family: Avenir Next-bold;
-            width:100%;
-        }
-    
-        &__label{
-            color:$silver-color;
-            margin:0;
-        }
-    
-        &__warehouse-container{
-            width:100%;
-        }
-    
+       
         &__double-container{
-            display:flex;
-            width:100%;
             flex-direction:row;
-            justify-content: space-between;
-            margin-bottom:20px;
-        }
-    
-        &__standard-container{
+            margin-bottom:10px;
             width:100%;
-            height:20%;
-            margin:0;   
-        }
-    
-        &__standard-input{
-            background-color:$grey-color;
-            border:1px solid $divider-color;
-            border-radius:3px;
-            padding:5%;
-            width:80%;
         }
     
         &__categories-input{
-            width:90%;
-            padding:4%;
+            width:100%;
+            height:100%;
         }
-    
+        &__standard-input{
+            width:90%;
+
+        }
         &__warehouse-input{
-            background-color:$grey-color;
-            border:1px solid $divider-color;
-            border-radius:3px;
-            padding:3%;
-            width:40%;
+            padding:2%;
+            width:45%;
             margin-bottom:16px;
         }
     
         &__buttons-container{
-            margin-top:20px;
             flex-direction:row;
-            display:flex;
-            justify-content: flex-end;
-            width:90%;
-        }
-    
-        &__save-button{
-            color:$white-text-color;
-            background-color:$instock-blue-color;
-            border:1px transparent white;
-            padding:8px 15%;
-            border-radius:4px;
-            margin-left:5%;
+            margin:40px 0px;
+            width:95%;
         }
     
         &__cancel-button{
-    
+            border:none;
+            background-color:white;
+            width:25%;
+            margin-top:0px;
+
         }
+        &__save-button{
+            width:25%;
+            padding:12px 5% 10px 4%;
+
+        }
+
+        &__categories-container{
+            height:100px;
+            width:100%;
+        }
+        
+    }
+
+    @include desktop-size(){
+
+        &__title{
+            margin-top:30px;
+        }
+        &__categories-container{
+            height:100px;
+        }
+        &__categories-input{
+            width:95%;
+            height:85px;
+            font-size:0.8rem;
+        }
+
+        &__double-container{
+            margin-bottom:0px;
+        }
+
+        &__standard-input{
+            font-size:0.8rem;
+            height:35px;
+        }
+
+        &__location-select{
+
+
+
+        }
+
     }
  }
 

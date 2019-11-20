@@ -34,7 +34,7 @@ class WareHouseModal extends React.Component {
                         </div>
                         <div className="warehouse-modal__position-container warehouse-modal__standard-container">
                             <h5 className="warehouse-modal__position-label warehouse-modal__label">POSITION</h5>
-                            <input defaultValue="Enter Postion" className="warehouse-modal__position-input warehouse-modal__standard-input"/>    
+                            <input defaultValue="Enter Position" className="warehouse-modal__position-input warehouse-modal__standard-input"/>    
                         </div>
                     </div>
                   
@@ -49,9 +49,9 @@ class WareHouseModal extends React.Component {
                             <input defaultValue="email@instock.com" className="warehouse-modal__email-input warehouse-modal__standard-input"/>       
                         </div>
                     </div>  
-                    <div className="warehouse-modal__categoies-container">
+                    <div className="warehouse-modal__categories-container">
                         <h5 className="warehouse-modal__categories-label warehouse-modal__label">CATEGORIES</h5>
-                        <textarea className="warehouse-modal__categories-input  warehouse-modal__standard-input" defaultValue="Use commas to separate each category"></textarea>
+                        <textarea className="warehouse-modal__categories-input " defaultValue="Use commas to separate each category"></textarea>
                     </div>
                     <div className="warehouse-modal__buttons-container">
                         <button className="warehouse-modal__cancel-button" onClick={this.closeModal}>CANCEL</button>
