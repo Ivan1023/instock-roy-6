@@ -41,7 +41,6 @@ class WareHouse extends React.Component {
                         <div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div>
                     </div>
                 </article>
-                <button onclick={this.openModal}>Button</button>
             </>
         )
     }

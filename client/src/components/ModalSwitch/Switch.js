@@ -1,5 +1,7 @@
 import React from 'react'
 import Switch from "react-switch";
+import '../ModalSwitch/Switch.scss'
+
 
 class SwitchModal extends React.Component {
     state =(
@@ -13,8 +15,8 @@ class SwitchModal extends React.Component {
 
     render (){
         return(
-        <label>
-            <span>Switch with default style</span>
+        <label className="switch-button">
+            <span>In Stock</span>
             <Switch onChange={this.handleChange} checked={this.state.checked} />
         </label>
         )
