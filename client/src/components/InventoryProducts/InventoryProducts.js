@@ -1,49 +1,45 @@
 import React from 'react';
-import './SpecificWarehousePage.scss';
+import './InventoryProducts.scss';
+import { Link } from 'react-router-dom';
 
 class InventoryProducts extends React.Component {
     render() {
         return (
-            <>
-                <article className="main__content-list">
-                    <div className="main__content-list__titles">
-                        <span>ITEM</span>
-                        <span>LAST ORDERED</span>
-                        <span>LOCATION</span>
-                        <span>QUANTITY</span>
-                        <span>STATUS</span>
+            <article className="main__list">
+                <div className="main__list-titles">
+                    <span>ITEM</span>
+                    <span>LAST ORDERED</span>
+                    <span>LOCATION</span>
+                    <span>QUANTITY</span>
+                    <span>STATUS</span>
+                </div>
+                <Link to="/warehouses" className="main__list-items">
+                    <div className="main__list-items__group">
+                        <h4 className="main__list-items__group-title">Item</h4>
                     </div>
-                    <Link to="/warehouses" className="main__content-list__items">
-                        <div className="main__content-list__items">
-                            <h2 className="main__content-list__items-title">Item</h2>
-                            <span className="main__content-list__items-title"></span>
-                        </div>
-                        <div className="main__content-list__items">
-                            <h2 className="main__content-list__address-title">Product Name Here</h2>
-                            <span>Here is a very brief description of the product in the inventory...</span>
-                        </div>
-                        <div className="main__content-list__row">
-                            <div className="main__content-list__address">
-                                <h4>LAST ORDERED</h4>
-                                <span>05/24/2018</span>
-                            </div>
-                            <div className="main__content-list__address">
-                                <span>LOCATION</span>
-                                <span>Toronto, CAN</span>
-                            </div>
-                            <div className="main__content-list__address">
-                                <span>QUANTITY</span>
-                                <span>12,000</span>
-                            </div>
-                            <div className="main__content-list__address">
-                                <span>STATUS</span>
-                                <span>In Stock</span>
-                            </div>
-                        </div>
-                        <div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div>
-                    </Link>
-                </article>
-            </>
+                    <div className="main__list-items__group">
+                        <h3>Product Name Here</h3>
+                        <span>Here is a very brief description of the product in the inventory...</span>
+                    </div>
+                    <div className="main__list-items__group">
+                        <h4 className="main__list-items__group-title">LAST ORDERED</h4>
+                        <span>05/24/2018</span>
+                    </div>
+                    <div className="main__list-items__group">
+                        <h4 className="main__list-items__group-title">LOCATION</h4>
+                        <span>Toronto, CAN</span>
+                    </div>
+                    <div className="main__list-items__group">
+                        <h4 className="main__list-items__group-title">QUANTITY</h4>
+                        <span>12,000</span>
+                    </div>
+                    <div className="main__list-items__group">
+                        <h4 className="main__list-items__group-title">STATUS</h4>
+                        <span>In Stock</span>
+                    </div>
+                    <div className="main__list-items__icon"></div>
+                </Link>
+            </article>
         )
     }
 }

@@ -8,11 +8,12 @@
     margin: 32px 0;
 
     @include tablet-size {
-        margin: 0;
+      margin: 0;
       margin-top: 32px;
       padding-bottom: 32px;
       border-bottom: 1px solid $divider-color;
     }
+    
     &__arrow {
       background-image: url(../../assets/Icons/SVG/Icon-back-arrow.svg);
       background-repeat: no-repeat;
@@ -20,6 +21,7 @@
       height: 26px;
       margin-right: 5%;
     }
+    
     &__title {
       @include header-mobile-style;
     }

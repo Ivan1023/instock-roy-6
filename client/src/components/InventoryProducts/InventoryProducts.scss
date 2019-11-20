@@ -1,12 +1,67 @@
-@import '../../style/base.scss';
+@import "../../style/base.scss";
 
-.main__content-list {
+.main__list {
+  padding: 32px 16px;
+  margin-top: 32px;
+  background-color: $grey-color;
 
-    &__titles {
-        display: none;
+  @include tablet-size {
+    padding: 48px 24px;
+  }
+  @include desktop-size {
+    padding: 48px 180px;
+  }
+
+  &-titles {
+    display: none;
+    @include tablet-size {
+      @include flex-display-row;
+    }
+  }
+
+  &-items {
+    @include flex-display-row;
+    text-decoration: none;
+    border-bottom: 1px solid $divider-color;
+    padding-bottom: 32px;
+    color: $black-text-color;
+
+    &__group {
+      margin-top: 24px;
+
+      @include tablet-size {
+        margin-top: 5.8%;
+        width: 25%;
+        text-align: center;
+        &:first-child {
+          display: none;
+        }
+        &:nth-child(2) {
+            text-align: left;
+          margin-top: 0;
+          margin-right: 15px;
+          width: 28%;
+        }
+      }
+
+      &-title {
+        color: $silver-color;
+        text-transform: uppercase;
+        margin: 0;
 
         @include tablet-size {
-            @include flex-display-row;
+          display: none;
         }
+      }
     }
+
+    &__icon {
+      @include tablet-size {
+        background-image: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+        background-repeat: no-repeat;
+        width: 11px;
+        margin-top: 5.8%;
+      }
+    }
+  }
 }
