@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import LocationsPage from './pages/LocationsPage/LocationsPage';
 import InventoryPage from './pages/InventoryPage/InventoryPage';
 import Nav from './components/Nav/Nav';
+import SpecificWarehousePage from './pages/SpecificWarehousePage/SpecificWarehousePage';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Switch>
-          <Route path="/" exact component={LocationsPage}></Route>
+          <Route path="/" exact component={SpecificWarehousePage}></Route>
           <Route path="/warehouses" exact component={LocationsPage}></Route>
           <Route path="/inventory" exact component={InventoryPage}></Route>
         </Switch>

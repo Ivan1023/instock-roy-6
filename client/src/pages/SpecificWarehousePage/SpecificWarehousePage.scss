@@ -1,0 +1,57 @@
+@import "../../style/base.scss";
+
+.main__content {
+  &-header {
+    @include flex-display-row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 32px 0;
+
+    @include tablet-size {
+        margin: 0;
+      margin-top: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid $divider-color;
+    }
+    &__arrow {
+      background-image: url(../../assets/Icons/SVG/Icon-back-arrow.svg);
+      background-repeat: no-repeat;
+      width: 15px;
+      height: 26px;
+      margin-right: 5%;
+    }
+    &__title {
+      @include header-mobile-style;
+    }
+  }
+
+  &-info {
+      @include pargraph-mobile-style;
+
+      @include tablet-size {
+          @include flex-display-row;
+      }
+
+      &__card {
+          margin-top: 24px;
+
+          @include tablet-size {
+              margin-top: 32px;
+              width: 50%;
+          }
+      }
+      
+      &__title {
+          color: $silver-color;
+          margin: 0;
+      }
+
+      &__text {
+          width: 39%;
+
+          @include desktop-size {
+              width: 23%;
+          }
+      }
+  }
+}
