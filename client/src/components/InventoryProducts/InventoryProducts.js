@@ -18,8 +18,7 @@ class InventoryProducts extends React.Component {
                     </thead>
                     
                     <tbody className="main__table-body">
-                        <div className="main__table-body__group">
-                            <tr className="main__table-body__head">
+                        <tr className="main__table-body__head">
                             <td className="main__table-body__data" data-label="Item">
                                 <h3>Product Name Here</h3>Here is a very brief description of the product in the inventory...
                             </td>
@@ -30,8 +29,6 @@ class InventoryProducts extends React.Component {
                             <td className="main__table-body__data" data-label="Status">In Stock</td>
                             <td className="main__table-body__data"><img alt="3 dots" className="main__table-body__data-input"/></td>
                         </tr>
-                        <tr  className="main__table-body__dots"></tr>
-                        </div>
                     </tbody>
                 </table>
             </article >

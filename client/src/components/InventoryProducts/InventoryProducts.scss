@@ -1,134 +1,5 @@
 @import "../../style/base.scss";
 
-// .main__list {
-//   padding: 32px 16px;
-//   margin-top: 32px;
-//   background-color: $grey-color;
-
-//   @include tablet-size {
-//     padding: 48px 24px;
-//   }
-//   @include desktop-size {
-//     padding: 48px 180px;
-//   }
-
-//   &-titles {
-//     display: none;
-//     @include tablet-size {
-//       @include flex-display-row;
-//     }
-
-//     &__head {
-//         @include tablet-size {
-//             width: 23%;
-//             text-align: center;
-//             &:first-child {
-//                 width: 40%;
-//                 text-align: left;
-//                 margin-right: 15px;
-//             }
-//             &:nth-child(2) {
-//               width: 15%;
-//             }
-//         }
-//     }
-
-//     & span {
-//       @include tablet-size {
-//         @include subheader-tablet-style;
-//         color: $silver-color;
-//         text-transform: uppercase;
-//         text-align: center;
-//         font-size: 13px;
-//         width: 25%;
-//         padding-right: 15px;
-
-//         &:first-child {
-//           width: 48%;
-//           text-align: left;
-//           padding: 0;
-//         }
-//         &:last-child {
-//           margin-right: 0;
-//           padding: 0;
-//         }
-//       }
-//       @include desktop-size {
-//         padding-left: 33px;
-//         width: 15%;
-
-//         &:first-child {
-//           margin-right: 4%;
-//           width: 32%;
-//         }
-//       }
-//     }
-//   }
-
-//   &-items {
-//     @include flex-display-column;
-//     text-decoration: none;
-//     border-bottom: 1px solid $divider-color;
-//     padding-bottom: 32px;
-//     color: $black-text-color;
-
-//     @include tablet-size {
-//       @include flex-display-row;
-//     }
-
-//     &__group {
-//       margin-top: 24px;
-
-//       @include tablet-size {
-//         margin-top: 7.8%;
-//         width: 25%;
-//         text-align: center;
-//         &:first-child {
-//           display: none;
-//         }
-//         &:nth-child(2) {
-//           text-align: left;
-//           margin-top: 0;
-//           margin-right: 15px;
-//           width: 42%;
-//         }
-//       }
-
-//       @include desktop-size {
-//         margin-top: 5%;
-//         width: 15%;
-//         text-align: left;
-//         &:nth-child(2) {
-//           margin-right: 0;
-//           width: 40%;
-//         }
-//       }
-
-//       &-title {
-//         color: $silver-color;
-//         text-transform: uppercase;
-//         margin: 0;
-
-//         @include tablet-size {
-//           display: none;
-//         }
-//       }
-//     }
-
-//     &__icon {
-//       @include tablet-size {
-//         background-image: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-//         background-repeat: no-repeat;
-//         width: 11px;
-//         margin-top: 7.8%;
-//       }
-
-//       @include desktop-size {
-//         margin-top: 4.8%;
-//       }
-//     }
-//   }
-// }
 .main {
   background-color: $grey-color;
   padding: 24px 16px;
@@ -158,6 +29,15 @@
     }
 
     &-body {
+      &__group {
+        @include flex-display-row;
+        justify-content: space-between;
+
+        @include tablet-size {
+          display: block;
+        }
+      }
+
       &__head {
         @include flex-display-column;
         @include tablet-size {
@@ -189,9 +69,7 @@
             @include subheader-tablet-style;
             display: none;
           }
-          
         }
-
 
         &:nth-child(2) {
           display: none;
@@ -204,17 +82,27 @@
           margin: 0;
           margin-top: 15px;
         }
+
         &-input {
-          content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-          background-repeat: no-repeat;
-          width: 5px;
+          display: none;
+          @include tablet-size {
+            display: block;
+            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+            background-repeat: no-repeat;
+            width: 5px;
+          }
+        }
+      }
+
+      &__dots {
+        content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+        background-repeat: no-repeat;
+        width: 5px;
+
+        @include tablet-size {
+          display: none;
         }
       }
     }
   }
-}
-.test {
-  content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-  background-repeat: no-repeat;
-  width: 5px;
 }
