@@ -57,6 +57,33 @@
             width: 44%;
           }
         }
+        //a hidden div for mockup requirments
+        &:nth-child(2) {
+          display: none;
+          @include tablet-size {
+            width: 5%;
+          }
+        }
+
+        &-item {
+          @include flex-display-row;
+          justify-content: space-between;
+          @include subheader-tablet-style;
+          color: $silver-color;
+          text-transform: uppercase;
+          @include tablet-size {
+            display: none;
+          }
+          //the dots for the mobile view only
+          &::after {
+            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+            background-repeat: no-repeat;
+            width: 5px;
+            margin: 0;
+          }
+        }
+
+        //the table heading for the mobile view only
         &::before {
           @include subheader-mobile-style;
           content: attr(data-label);
@@ -71,14 +98,8 @@
           }
         }
 
-        &:nth-child(2) {
-          display: none;
-          @include tablet-size {
-            width: 5%;
-          }
-        }
-
-        & h3 {
+      
+        &-firstTitle {
           margin: 0;
           margin-top: 15px;
         }
@@ -91,16 +112,6 @@
             background-repeat: no-repeat;
             width: 5px;
           }
-        }
-      }
-
-      &__dots {
-        content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-        background-repeat: no-repeat;
-        width: 5px;
-
-        @include tablet-size {
-          display: none;
         }
       }
     }

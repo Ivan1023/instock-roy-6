@@ -19,8 +19,9 @@ class InventoryProducts extends React.Component {
                     
                     <tbody className="main__table-body">
                         <tr className="main__table-body__head">
-                            <td className="main__table-body__data" data-label="Item">
-                                <h3>Product Name Here</h3>Here is a very brief description of the product in the inventory...
+                            <td className="main__table-body__data">
+                                <p className="main__table-body__data-item">Item</p>
+                                <h3 className="main__table-body__data-firstTitle">Product Name Here</h3>Here is a very brief description of the product in the inventory...
                             </td>
                             <td className="main__table-body__data"></td>
                             <td className="main__table-body__data" data-label="Last Ordered">05/24/2018</td>
