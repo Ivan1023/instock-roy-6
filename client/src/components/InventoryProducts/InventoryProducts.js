@@ -62,7 +62,7 @@ class InventoryProducts extends React.Component {
                             <td className="main__table-body__data">
                                 <div className="dropdown" ref={this.container}>
                                     <img onClick={this.handleButtonClick} alt="3 dots" className="main__table-body__data-input"/>
-                                    {this.state.open && (<button className="dropdown__position">Remove</button>)}
+                                    {this.state.open && (<button onClick={this.props.removeInventory} className="dropdown__position">Remove</button>)}
                                 </div>
                             </td>
                         </tr>

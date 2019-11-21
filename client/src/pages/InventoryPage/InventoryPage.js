@@ -30,6 +30,10 @@ class InventoryPage extends React.Component {
         this.setState({modalIsOpen: false});
       }
 
+    removeInventory = () =>{
+        console.log("remove button pushed")
+    }
+
     render() {
         return (
             <>
@@ -40,7 +44,7 @@ class InventoryPage extends React.Component {
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
                     </section>
-                    <InventoryProducts />
+                    <InventoryProducts removeInventory={this.removeInventory} />
                     <div>
                         <button onClick={this.openModal}>Open Modal</button>
                         <Modal
