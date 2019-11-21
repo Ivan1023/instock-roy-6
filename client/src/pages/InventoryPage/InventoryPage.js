@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import '../../pages/LocationsPage/LocationsPage.scss'
 
 import InventoryModal from '../../components/InventoryModal/InventoryModal'
+import InventoryProducts from '../../components/InventoryProducts/InventoryProducts';
 
 const customStyles = {
     content : {
@@ -37,8 +38,8 @@ class InventoryPage extends React.Component {
                             <h1 className="main__content-header__title">Inventory</h1>
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
-                        
                     </section>
+                    <InventoryProducts />
                     <div>
                         <button onClick={this.openModal}>Open Modal</button>
                         <Modal
