@@ -20,25 +20,27 @@ class InventoryProduct extends React.Component {
                     <div className="product__content-description">
                         <div>
                             <span>ITEM DESCRIPTIONS</span>
-                            <p>Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product</p>
+                            <p className="product__content-description__p">Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product</p>
                         </div>
 
                         <div>
-                            <div className="product__content-description__items">
-                                <span className="product__content-description__titles">ORDERED BY</span>
-                                <p className="product__content-description__info">Mark Saunders</p>
-                            </div>
-                            <div className="product__content-description__items">
-                                <span className="product__content-description__titles">REFERENCE NUMBER</span>
-                                <p className="product__content-description__info">JK2020OISFBIO</p>
-                            </div>
+                            {/* <div className=""> */}
+                                <div className="product__content-description__items">
+                                    <span className="product__content-description__titles">ORDERED BY</span>
+                                    <p className="product__content-description__info">Mark Saunders</p>
+                                </div>
+                                <div className="product__content-description__items">
+                                    <span className="product__content-description__titles">REFERENCE NUMBER</span>
+                                    <p className="product__content-description__info">JK2020OISFBIO</p>
+                                </div>
+                            {/* </div> */}
                             <div className="product__content-description__items">
                                 <span className="product__content-description__titles">LAST ORDERED</span>
                                 <p className="product__content-description__info">5/24/18</p>
                             </div>
                             <div className="product__content-description__items">
                                 <span className="product__content-description__titles">LOCATION</span>
-                                <p className="product__content-description__info">Toronto, CAN></p>
+                                <p className="product__content-description__info">Toronto, CAN</p>
                             </div>
                             <div className="product__content-description__items">
                                 <span className="product__content-description__titles">QUANTITY</span>

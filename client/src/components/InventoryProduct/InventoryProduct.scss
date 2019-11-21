@@ -1,11 +1,16 @@
 @import "../../style/base.scss";
 
 
-.product__content {
-// font-family: $demibold-font;
+main {
   margin: 0px 16px 24px 16px;
+}
 
+
+.product__content {
+  margin-bottom: 24px;
   @include tablet-size {
+    @include flex-display-row;
+    
     margin: 0 24px;
   }
 
@@ -16,17 +21,23 @@
   &-description {
     color: $silver-color;
 
+    &__p {
+      color: black;
+    }
+
     &__titles {
         font-family: $demibold-font;
     }
-
-    &__items {
-    }
-
     &__info {
         color: black;
     }
+    &__box1 {
+      display: flex;
+      // flex-direction: ;
+    }
   }
+
+  
 
   &-box {
     @include flex-display-row;
@@ -35,7 +46,7 @@
 
     @include tablet-size {
       @include flex-display-row;
-      justify-content: space-between;
+      // justify-content: space-between;
       align-items: center;
       margin: 48px 0;
     }
@@ -59,6 +70,11 @@
         border-radius: 5px;
         color: $white-text-color;
         background-color: $instock-green-color;
+
+        @include tablet-size {
+          margin-top: 60px;
+          margin-left: 24px;
+        }
     }
   }
 
@@ -67,15 +83,27 @@
     background-repeat: no-repeat;
     width: 16px;
     height: 24px;
+
+    @include tablet-size {
+      margin-right: 1rem;
+    }
   }
 
   &-button {
     width: 288px;
     height: 48px;
+    margin-top: 24px;
     background-color: $instock-blue-color;
     color: $white-text-color;
     font-family: $demibold-font;
+    font-size: 1rem;
     border-radius: 5px;
+    outline: none;
+
+    @include tablet-size {
+      width: 160px;
+      margin-left: 550px;
+    }
   }
 }
 
