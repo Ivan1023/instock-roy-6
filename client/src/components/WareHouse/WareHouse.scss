@@ -42,6 +42,8 @@
   }
 
   &__table {
+    text-decoration: none;
+    color: $black-text-color;
     @include desktop-size {
       @include flex-display-row;
       justify-content: space-between;

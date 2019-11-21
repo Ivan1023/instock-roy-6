@@ -9,12 +9,12 @@ export default class Nav extends React.Component {
     render() {
         return (
             <header className="nav">
-                <div className="nav__logo-container">
+                <Link to ="/" className="nav__logo-container">
                     <img className="nav__logo" src={logo} alt="instock logo"></img>
-                </div>
+                </Link>
                 <div className="nav__links-container">
-                    <Link to="/inventory" className="nav__inventory-link nav__active-link">Inventory</Link>
-                    <Link to="/" className="nav__location-link">Locations</Link>
+                    <Link to="/" className="nav__inventory-link nav__active-link">Inventory</Link>
+                    <Link to="/warehouses" className="nav__location-link">Locations</Link>
                 </div>
             </header>
         )
