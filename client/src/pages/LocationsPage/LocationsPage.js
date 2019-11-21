@@ -13,7 +13,7 @@ class LocationsPage extends React.Component {
                             <h1 className="main__content-header__title"> Locations </h1>
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
-                        <WareHouse />
+                        <WareHouse warehouses = {this.props.warehouses}/>
                     </section>
                 </main>
             </>
