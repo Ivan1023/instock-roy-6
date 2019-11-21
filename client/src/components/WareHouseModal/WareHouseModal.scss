@@ -119,7 +119,7 @@
         }
     
         &__categories-input{
-            width:100%;
+            width:95%;
             height:100%;
         }
         &__standard-input{
@@ -163,6 +163,7 @@
         &__title{
             margin-top:30px;
         }
+        
         &__categories-container{
             height:100px;
         }
@@ -180,11 +181,12 @@
             font-size:0.8rem;
             height:35px;
         }
-
-        &__location-select{
-
-
-
+       
+        &__warehouse-container{
+            margin-bottom:-10px
+        }
+        &__warehouse-input{
+            font-size:0.8rem;
         }
 
     }
