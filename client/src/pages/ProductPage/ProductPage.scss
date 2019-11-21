@@ -1,0 +1,167 @@
+@import "../../style/base.scss";
+
+
+main {
+  margin: 0px 16px 24px 16px;
+}
+
+.product__content {
+  margin-bottom: 24px;
+
+  @include tablet-size {
+    height: 0%;
+    border-bottom: 1px solid $silver-color;
+
+    @include flex-display-row;
+    margin: 0 24px;
+  }
+
+  @include desktop-size {
+    margin: 0 180px;
+  }
+
+  &-description {
+    color: $silver-color;
+
+    @include desktop-size{
+      margin: 0 180px;
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid $silver-color;
+    }
+
+    &-title {
+      margin-top: 30px;
+    }
+    &__p {
+      margin-right: 3rem;
+      color: black;
+
+      @include desktop-size {
+        width: 500px;
+      }
+    }
+    &__titles {
+        font-family: $demibold-font;
+    }
+    &__info {
+        color: black;
+
+        @include tablet-size {
+          width: 500px;
+        }
+
+        @include desktop-size {
+          width: 500px;
+        }
+    }
+    &__items {
+      width: 200px;
+      margin-right: 100px;
+    }
+  }
+
+  &-box {
+    @include flex-display-row;
+    margin-top: 32px;
+    margin-bottom: 0px;
+
+    @include tablet-size {
+      @include flex-display-row;
+      // justify-content: space-between;
+      align-items: center;
+      margin: 48px 0;
+    }
+
+    &__title {
+      @include header-mobile-style;
+      margin-left: 20px;
+      margin-bottom: 16px;
+      text-transform: capitalize;
+
+      @include tablet-size {
+        @include header-tablet-style;
+        margin: 0;
+      }
+    }
+
+    &__instock {
+        height: 24px;
+        width: 88px;
+        padding-left: 20px;
+        border-radius: 5px;
+        color: $white-text-color;
+        background-color: $instock-green-color;
+
+        @include tablet-size {
+          margin-top: 60px;
+          margin-left: 24px;
+        }
+    }
+  }
+
+  &-icon {
+    background-image: url(../../assets/Icons/SVG/Icon-back-arrow.svg);
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 24px;
+
+    @include tablet-size {
+      margin-right: 1rem;
+    }
+  }
+
+  &-button {
+    width: 288px;
+    height: 48px;
+    margin-top: 24px;
+    background-color: $instock-blue-color;
+    color: $white-text-color;
+    font-family: $demibold-font;
+    font-size: 1rem;
+    border-radius: 5px;
+    outline: none;
+
+    @include tablet-size {
+      width: 160px;
+      margin-left: 550px;
+    }
+
+    @include desktop-size {
+      margin-top: 40px;
+      margin-left: 1050px;
+    }
+  }
+}
+
+@include desktop-size {
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      margin-top: 24px;
+    }
+  }
+}
+@include tablet-size {
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      margin-top: 24px;
+    }
+  }
+}
+
+
+
+
+    

@@ -1,7 +1,6 @@
 @import "../../style/base.scss";
 
 .main {
-  background-color: $grey-color;
   padding: 0 16px;
 
   @include tablet-size {

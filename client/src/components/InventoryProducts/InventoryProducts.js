@@ -1,5 +1,6 @@
 import React from 'react';
 import './InventoryProducts.scss';
+import { Link } from 'react-router-dom';
 
 class InventoryProducts extends React.Component {
     container = React.createRef();
@@ -53,7 +54,7 @@ class InventoryProducts extends React.Component {
                         <tr className="main__table-body__head">
                             <td className="main__table-body__data">
                                 <p className="main__table-body__data-item">Item</p>
-                                <h3 className="main__table-body__data-firstTitle">Product Name Here</h3>Here is a very brief description of the product in the inventory...
+                                <Link to="/products"><h3 className="main__table-body__data-firstTitle">Product Name Here</h3></Link>Here is a very brief description of the product in the inventory...
                             </td>
                             <td className="main__table-body__data" data-label="Last Ordered">05/24/2018</td>
                             <td className="main__table-body__data" data-label="Location">Toronto, CAN</td>

@@ -13,7 +13,7 @@
 
   &-header {
     @include flex-display-column;
-    margin: 32px 0;
+    margin: 32px 0px 0px 0px;
 
     @include tablet-size {
       @include flex-display-row;
@@ -42,6 +42,7 @@
       text-indent: 10%;
       background-position: 5% 50%;
       background-repeat: no-repeat;
+      background-color: $grey-color;
 
       &::placeholder {
         color: $black-text-color;
