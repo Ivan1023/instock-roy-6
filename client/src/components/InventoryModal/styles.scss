@@ -1,0 +1,118 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+body {
+    margin: 0;
+}
+
+.modal {
+
+    &__header {
+        @include header-mobile-style;
+        padding: 12px 0 32px 0;
+
+        @include tablet-size{
+            @include header-tablet-style
+        }
+    }
+
+    &__tablet {
+    display: flex;
+    flex-direction: column;
+    }
+
+    &__label{
+        font-family: $bold-font;
+        text-transform: uppercase;
+        color: $silver-color;
+        margin: 0;
+        padding: 0 0 8px 0;
+    }
+
+    @include tablet-size {
+
+        &__tablet {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__tablet--description {
+        display: flex;
+        flex-direction: column;
+        
+
+        @include tablet-size {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__textbox {
+        @include pargraph-mobile-style; 
+        background-color: #fafafa;
+        border: 1px solid #E1E1E1;
+        border-radius: 4px;
+        resize: none;
+        outline: none;
+        margin-bottom: 24px;
+        width: 220px;
+        height: 48px;
+        padding: 12px 0 0 16px;
+        
+        
+    }
+
+    &__textbox--option{
+        padding: 0 0 0 16px;
+    }
+
+    &__textbox--description{
+        height: 80px;
+
+        @include tablet-size{
+            width: 480px;
+            height: 80px;
+        }
+    }
+
+    &__button--save {
+        background-color: $instock-blue-color;
+        color: $white-text-color;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        height: 48px;
+
+        @include tablet-size{
+            width: 160px;
+        }
+    }
+
+    &__button--cancel{
+        background-color: $white-text-color;
+        color: $instock-blue-dark; 
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        height: 48px;
+
+        @include tablet-size{
+            width: 160px;
+        }
+    }
+
+    &__tablet--desktop{
+        @include tablet-size{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__textbox-tablet{
+        @include tablet-size{
+            padding: 0 40px 0 0;
+        }
+    }
+    
+}

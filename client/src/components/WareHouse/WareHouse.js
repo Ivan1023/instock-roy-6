@@ -1,5 +1,6 @@
 import React from 'react';
 import './WareHouse.scss';
+import { Link } from 'react-router-dom';
 
 class WareHouse extends React.Component {
     render() {
@@ -17,7 +18,7 @@ class WareHouse extends React.Component {
                             <span></span>
                         </div>
                     </div>
-                    <div className="main__content-list__table">
+                   <Link to ="/warehouses/warehouse" className="main__content-list__table">
                         <div className="main__content-list__row">
                             <div className="main__content-list__address">
                                 <h2 className="main__content-list__address-title">Warehouse Number 1</h2>
@@ -39,7 +40,7 @@ class WareHouse extends React.Component {
                             </div>
                         </div>
                         <div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div>
-                    </div>
+                    </Link>
                 </article>
             </>
         )

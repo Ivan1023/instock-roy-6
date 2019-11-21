@@ -22,6 +22,9 @@ class LocationsPage extends React.Component {
       }
 
 
+
+
+class LocationsPage extends React.Component {
     render() {
         return (
             <>
