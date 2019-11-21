@@ -2,7 +2,7 @@ import React from 'react';
 import './ProductPage.scss';
 import { Link } from 'react-router-dom';
 
-class InventoryProduct extends React.Component {
+class ProductPage extends React.Component {
 
     render() {
         return (
@@ -57,8 +57,6 @@ class InventoryProduct extends React.Component {
                         </div>
                     </div>
 
-                    
-
                 <button className="product__content-button" type="button">EDIT</button>
 
                 </main>
@@ -66,4 +64,4 @@ class InventoryProduct extends React.Component {
         )
     }
 }
-export default InventoryProduct
+export default ProductPage
