@@ -16,7 +16,6 @@ class App extends React.Component {
   getInventory = () => {
     Axios.get(`${this.inventoryUrl}`)
     .then(response => {
-      console.log(response.data)
       this.setState({
         products: response.data
       })
@@ -28,7 +27,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
         <BrowserRouter>
           <Nav />

@@ -30,7 +30,6 @@ class InventoryPage extends React.Component {
       }
 
     render() {
-        console.log(this.props);
         return (
             <>
                 <main>
@@ -40,7 +39,7 @@ class InventoryPage extends React.Component {
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
                     </section>
-                    <InventoryProducts />
+                    <InventoryProducts products={this.props.products}/>
                     <div>
                         <button onClick={this.openModal}>Open Modal</button>
                         <Modal
