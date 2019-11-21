@@ -1,25 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import LocationsPage from './pages/LocationsPage/LocationsPage';
-import InventoryPage from './pages/InventoryPage/InventoryPage';
-import Nav from './components/Nav/Nav';
-import SpecificWarehousePage from './pages/SpecificWarehousePage/SpecificWarehousePage';
-
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    ReactDOM.render(
-      <BrowserRouter>
-        <Nav />
-        <Switch>
-          <Route path="/" exact component={InventoryPage}></Route>
-          <Route path="/warehouses" exact component={LocationsPage}></Route>
-          <Route path="/warehouses/warehouse" component={SpecificWarehousePage}></Route>
-        </Switch>
-      </BrowserRouter>
-      ,document.getElementById('root')
-    )
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
