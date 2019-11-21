@@ -18,7 +18,7 @@ class WareHouse extends React.Component {
                             <span></span>
                         </div>
                     </div>
-                   <Link to ="/warehouses" className="main__content-list__table">
+                   <Link to ="/warehouses/warehouse" className="main__content-list__table">
                         <div className="main__content-list__row">
                             <div className="main__content-list__address">
                                 <h2 className="main__content-list__address-title">Warehouse Number 1</h2>

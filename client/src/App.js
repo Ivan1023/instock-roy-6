@@ -13,9 +13,9 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Switch>
-          <Route path="/" exact component={SpecificWarehousePage}></Route>
+          <Route path="/" exact component={InventoryPage}></Route>
           <Route path="/warehouses" exact component={LocationsPage}></Route>
-          <Route path="/inventory" exact component={InventoryPage}></Route>
+          <Route path="/warehouses/warehouse" component={SpecificWarehousePage}></Route>
         </Switch>
       </BrowserRouter>
       ,document.getElementById('root')

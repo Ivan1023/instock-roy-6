@@ -7,9 +7,9 @@ class SpecificWarehousePage extends React.Component {
         return (
             <>
                 <main className="main__content">
-                    <article className="main__content-header">
-                        <div className="main__content-header__arrow"></div>
-                        <h1 className="main__content-header__title"> Warehouse Name </h1>
+                    <article className="main__content-heading">
+                        <div className="main__content-heading__arrow"></div>
+                        <h1 className="main__content-heading__title"> Warehouse Name </h1>
                     </article>
                     <article className="main__content-info">
                         <div className="main__content-info__card">

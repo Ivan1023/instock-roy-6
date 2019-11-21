@@ -1,7 +1,7 @@
 @import "../../style/base.scss";
 
 .main__content {
-  &-header {
+  &-heading {
     @include flex-display-row;
     align-items: center;
     justify-content: flex-start;

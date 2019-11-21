@@ -57,13 +57,6 @@
             width: 44%;
           }
         }
-        //a hidden div for mockup requirments
-        &:nth-child(2) {
-          display: none;
-          @include tablet-size {
-            width: 5%;
-          }
-        }
 
         &-item {
           @include flex-display-row;
