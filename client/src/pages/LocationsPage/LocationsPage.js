@@ -1,9 +1,30 @@
 import React from 'react';
 import './LocationsPage.scss';
 import WareHouse from '../../components/WareHouse/WareHouse';
+import Modal from 'react-modal';
+import  '../../components/WareHouseModal/WareHouseModal.scss'
+import WareHouseModal from '../../components/WareHouseModal/WareHouseModal'
 
 class LocationsPage extends React.Component {
 
+    state={
+        modalIsOpen:false
+    }
+
+    openModal=()=> {
+        console.log("you clicked the open modal")
+        this.setState({modalIsOpen: true});
+      }
+     
+
+      closeModal=()=>{
+        this.setState({modalIsOpen: false});
+      }
+
+
+
+
+class LocationsPage extends React.Component {
     render() {
         return (
             <>
@@ -15,6 +36,17 @@ class LocationsPage extends React.Component {
                         </article>
                         <WareHouse />
                     </section>
+                    
+                    <button onClick={this.openModal}>ModalTest</button>
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onAfterOpen={this.afterOpenModal}
+                        onRequestClose={this.closeModal}
+                        className="content"
+                        overlayClassName="overlay"
+                        >
+                        <WareHouseModal/>
+                    </Modal>
                 </main>
             </>
         )
