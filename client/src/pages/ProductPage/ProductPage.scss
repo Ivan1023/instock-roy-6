@@ -5,12 +5,14 @@ main {
   margin: 0px 16px 24px 16px;
 }
 
-
 .product__content {
   margin-bottom: 24px;
+
   @include tablet-size {
+    height: 0%;
+    border-bottom: 1px solid $silver-color;
+
     @include flex-display-row;
-    
     margin: 0 24px;
   }
 
@@ -21,23 +23,43 @@ main {
   &-description {
     color: $silver-color;
 
-    &__p {
-      color: black;
+    @include desktop-size{
+      margin: 0 180px;
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid $silver-color;
     }
 
+    &-title {
+      margin-top: 30px;
+    }
+    &__p {
+      margin-right: 3rem;
+      color: black;
+
+      @include desktop-size {
+        width: 500px;
+      }
+    }
     &__titles {
         font-family: $demibold-font;
     }
     &__info {
         color: black;
+
+        @include tablet-size {
+          width: 500px;
+        }
+
+        @include desktop-size {
+          width: 500px;
+        }
     }
-    &__box1 {
-      display: flex;
-      // flex-direction: ;
+    &__items {
+      width: 200px;
+      margin-right: 100px;
     }
   }
-
-  
 
   &-box {
     @include flex-display-row;
@@ -104,8 +126,42 @@ main {
       width: 160px;
       margin-left: 550px;
     }
+
+    @include desktop-size {
+      margin-top: 40px;
+      margin-left: 1050px;
+    }
   }
 }
+
+@include desktop-size {
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      margin-top: 24px;
+    }
+  }
+}
+@include tablet-size {
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      margin-top: 24px;
+    }
+  }
+}
+
+
 
 
     
