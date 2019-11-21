@@ -1,25 +1,11 @@
 import React from 'react';
 import './LocationsPage.scss';
 import WareHouse from '../../components/WareHouse/WareHouse';
+
 import Modal from 'react-modal';
 import  '../../components/WareHouseModal/WareHouseModal.scss'
 import WareHouseModal from '../../components/WareHouseModal/WareHouseModal'
 import ModalContainerStyles from '../../style/ModalContainer.scss'
-
-// const customStyles = {
-//     content : {
-//       top                   : '50%',
-//       left                  : '50%',
-//       right                 : 'auto',
-//       bottom                : 'auto',
-//       marginRight           : '-50%',
-//       transform             : 'translate(-50%, -50%)',
-//       width: '70%',
-//       height:'95%'
-//     }
-//   };
-
-//   Modal.setAppElement('LocationsPage')
 
 class LocationsPage extends React.Component {
 
@@ -38,6 +24,9 @@ class LocationsPage extends React.Component {
       }
 
 
+
+
+class LocationsPage extends React.Component {
     render() {
         return (
             <>

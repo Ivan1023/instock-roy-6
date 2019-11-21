@@ -1,0 +1,11 @@
+@import '../../style/mixins.scss';
+@import '../../style/variables.scss';
+
+.switch-button{
+    @include pargraph-mobile-style;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    width: 220px;
+
+}

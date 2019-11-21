@@ -23,14 +23,21 @@
     }
 
     &__inventory-link{
+        width: 50%;
         text-decoration: none;
+        padding-bottom: 14px;
         color:$silver-color;
-        padding:0px 0% 16px 0%;
+
+        text-align: center;
+
     }
     &__location-link{
+        width: 50%;
         text-decoration: none;
-        padding:0px 0% 16px 0%;
         color:$silver-color;
+        width: 50%;
+        padding-bottom: 14px;
+        text-align: center;
     }
     &__active-link{
         color:$white-text-color;
@@ -38,7 +45,7 @@
         padding-bottom:14px
         }
 
-    @include tablet-size(){
+    @include tablet-size {
         height:80px;
         justify-content: flex-start;
         flex-direction:row;
@@ -77,7 +84,7 @@
             }
     }
 
-    @include desktop-size(){
+    @include desktop-size {
         height:80px;
         justify-content: flex-start;
         flex-direction:row;
