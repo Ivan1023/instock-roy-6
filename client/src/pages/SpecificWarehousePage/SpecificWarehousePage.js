@@ -24,7 +24,7 @@ class SpecificWarehousePage extends React.Component {
                         </div>
                     </article>
                 </main>
-                <InventoryProducts />
+                <InventoryProducts products={this.props.products}/>
             </>
         )
     }

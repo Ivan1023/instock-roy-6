@@ -1,6 +1,6 @@
 import React from 'react';
 import './InventoryProducts.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class InventoryProducts extends React.Component {
     container = React.createRef();

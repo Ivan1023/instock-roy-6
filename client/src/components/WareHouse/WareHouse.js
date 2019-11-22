@@ -3,6 +3,9 @@ import './WareHouse.scss';
 import { Link } from 'react-router-dom';
 
 class WareHouse extends React.Component {
+    postInventory = () => {
+    
+    }
     render() {
         return (
             <>
@@ -20,13 +23,13 @@ class WareHouse extends React.Component {
                     </div>
                     {this.props.warehouses.map((item) => {
                         return (
-                            <Link to="/warehouses/warehouse" className="main__content-list__table" key={item.id}>
+                            <div className="main__content-list__table" key={item.id}>
                                 <div className="main__content-list__row">
                                     <div className="main__content-list__address">
                                         <h2 className="main__content-list__address-title">{item.name}</h2>
                                         <span>{item.address.street}</span>
                                     </div>
-                                    <div className="main__content-list__arrowIcon main__content-list__tabletIcon"></div>
+                                    <Link to="/warehouses/warehouse"><div className="main__content-list__arrowIcon main__content-list__tabletIcon"></div></Link>
                                 </div>
                                 <div className="main__content-list__row">
                                     <div className="main__content-list__address">
@@ -41,8 +44,8 @@ class WareHouse extends React.Component {
                                         <span>{item.inventoryCategories}</span>
                                     </div>
                                 </div>
-                                <div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div>
-                            </Link>
+                                <Link to= "/warehouses/warehouse"><div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div></Link>
+                            </div>
                         );
                     })}
                 </article>

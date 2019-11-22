@@ -2,8 +2,9 @@ import React from 'react';
 import './LocationsPage.scss';
 import WareHouse from '../../components/WareHouse/WareHouse';
 import Modal from 'react-modal';
-import  '../../components/WareHouseModal/WareHouseModal.scss'
-import WareHouseModal from '../../components/WareHouseModal/WareHouseModal'
+import addImage from '../../assets/Icons/SVG/Icon-add.svg';
+import  '../../components/WareHouseModal/WareHouseModal.scss';
+import WareHouseModal from '../../components/WareHouseModal/WareHouseModal';
 
 class LocationsPage extends React.Component {
 
@@ -33,7 +34,7 @@ class LocationsPage extends React.Component {
                             <WareHouse warehouses = {this.props.warehouses}/>
                         </section>
                         
-                        <button onClick={this.openModal}>ModalTest</button>
+                        <button className="main__content-header__addButton" onClick={this.openModal}> <img src={addImage} alt="add" /></button>
                         <Modal
                             isOpen={this.state.modalIsOpen}
                             onAfterOpen={this.afterOpenModal}
