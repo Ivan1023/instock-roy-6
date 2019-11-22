@@ -1,7 +1,6 @@
 @import "../../style/base.scss";
 
 .main__content-list {
-  border-bottom: 1px solid $divider-color;
   margin-bottom: 24px;
 
   @include desktop-size {
@@ -34,7 +33,9 @@
         &:nth-child(2) {
           margin-right: 15%;
         }
-
+        &:nth-child(3) {
+          margin-right: 15%;
+        }
       }
     }
   }
@@ -42,6 +43,12 @@
   &__table {
     text-decoration: none;
     color: $black-text-color;
+    padding: 24px 0;
+    border-bottom: 1px solid $divider-color;
+
+    @include tablet-size {
+      padding: 32px 0;
+    }
     @include desktop-size {
       @include flex-display-row;
       justify-content: space-between;

@@ -18,29 +18,33 @@ class WareHouse extends React.Component {
                             <span></span>
                         </div>
                     </div>
-                   <Link to ="/warehouses/warehouse" className="main__content-list__table">
-                        <div className="main__content-list__row">
-                            <div className="main__content-list__address">
-                                <h2 className="main__content-list__address-title">Warehouse Number 1</h2>
-                                <span>469 King St W, Toronto, ON</span>
-                            </div>
-                            <div className="main__content-list__arrowIcon main__content-list__tabletIcon"></div>
-                        </div>
-                        <div className="main__content-list__row">
-                            <div className="main__content-list__address">
-                                <span>Mara Weinberg</span>
-                                <span>Warehouse Manager</span>
-                            </div>
-                            <div className="main__content-list__address">
-                                <span>+1 416 678 2345</span>
-                                <span>weinberg@instack.com</span>
-                            </div>
-                            <div className="main__content-list__address">
-                                <span>Industrial, Automotive, Heavy, Mechanical, Engineering</span>
-                            </div>
-                        </div>
-                        <div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div>
-                    </Link>
+                    {this.props.warehouses.map((item) => {
+                        return (
+                            <Link to="/warehouses/warehouse" className="main__content-list__table" key={item.id}>
+                                <div className="main__content-list__row">
+                                    <div className="main__content-list__address">
+                                        <h2 className="main__content-list__address-title">{item.name}</h2>
+                                        <span>{item.address.street}</span>
+                                    </div>
+                                    <div className="main__content-list__arrowIcon main__content-list__tabletIcon"></div>
+                                </div>
+                                <div className="main__content-list__row">
+                                    <div className="main__content-list__address">
+                                        <span>{item.contact.name}</span>
+                                        <span>{item.contact.title}</span>
+                                    </div>
+                                    <div className="main__content-list__address">
+                                        <span>{item.contact.phone}</span>
+                                        <span>{item.contact.email}</span>
+                                    </div>
+                                    <div className="main__content-list__address">
+                                        <span>{item.inventoryCategories}</span>
+                                    </div>
+                                </div>
+                                <div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div>
+                            </Link>
+                        );
+                    })}
                 </article>
             </>
         )

@@ -1,8 +1,13 @@
 import React from 'react';
 import './InventoryProducts.scss';
+import RemoveButton from '../RemoveButton/RemoveButton'
 
 class InventoryProducts extends React.Component {
+    
+    
+
     render() {
+
         return (
             < article className="main" >
                 <table className="main__table">
@@ -16,19 +21,29 @@ class InventoryProducts extends React.Component {
                             <th></th>
                         </tr>
                     </thead>
-                    
                     <tbody className="main__table-body">
-                        <tr className="main__table-body__head">
-                            <td className="main__table-body__data">
-                                <p className="main__table-body__data-item">Item</p>
-                                <h3 className="main__table-body__data-firstTitle">Product Name Here</h3>Here is a very brief description of the product in the inventory...
-                            </td>
-                            <td className="main__table-body__data" data-label="Last Ordered">05/24/2018</td>
-                            <td className="main__table-body__data" data-label="Location">Toronto, CAN</td>
-                            <td className="main__table-body__data" data-label="Quantity">12,000</td>
-                            <td className="main__table-body__data" data-label="Status">In Stock</td>
-                            <td className="main__table-body__data"><img alt="3 dots" className="main__table-body__data-input"/></td>
-                        </tr>
+                        {this.props.products.map((item) => {
+                            return (
+                                <tr className="main__table-body__head" key={item.id}>
+                                    <td className="main__table-body__data">
+                                        <div className="main__table-body__container">
+                                            <p className="main__table-body__data-item">Item</p>
+                                            <div className="main__table-body__container"><RemoveButton/></div>
+                                        </div>
+                                        <h3 className="main__table-body__data-firstTitle">{item.name}</h3>{item.description}
+                                    </td>
+                                    <td className="main__table-body__data" data-label="Last Ordered">{item.lastOrdered}</td>
+                                    <td className="main__table-body__data" data-label="Location">{item.location}</td>
+                                    <td className="main__table-body__data" data-label="Quantity">{item.quantity}</td>
+                                    <td className="main__table-body__data" data-label="Status">{item.isInstock ? "In Stock" : "Out of Stock"}</td>
+                                    <td className="main__table-body__data">
+                                        <div className="main__table-body__container__tablet">
+                                            <RemoveButton/>
+                                        </div>
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </article >

@@ -12,7 +12,8 @@ const customStyles = {
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
+      transform             : 'translate(-50%, -50%)',
+      height                : '75%'
     }
   };
 
@@ -39,7 +40,7 @@ class InventoryPage extends React.Component {
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
                     </section>
-                    <InventoryProducts />
+                    <InventoryProducts products={this.props.products}/>
                     <div>
                         <button onClick={this.openModal}>Open Modal</button>
                         <Modal
