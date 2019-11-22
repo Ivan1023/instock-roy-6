@@ -1,9 +1,30 @@
 import React from 'react';
 import './SpecificWarehousePage.scss';
+import Axios from 'axios';
 import InventoryProducts from '../../components/InventoryProducts/InventoryProducts';
 
 class SpecificWarehousePage extends React.Component {
+    url = 'http://localhost:8080';
+    state = {
+        warehouse: []
+    }
+
+    getWarehouse = (id) => {
+        if (id) {
+            Axios.get(`${this.url}/warehouses/${id}/`)
+                .then(response => {
+                    this.setState({
+                        warehouse: response.data
+                    })
+                })
+        }
+    }
+
+    componentDidMount() {
+        this.getWarehouse(this.props.match.params.id);
+    }
     render() {
+
         return (
             <>
                 <main className="main__content">
@@ -24,7 +45,7 @@ class SpecificWarehousePage extends React.Component {
                         </div>
                     </article>
                 </main>
-                <InventoryProducts products={this.props.products}/>
+                <InventoryProducts products={this.props.products} />
             </>
         )
     }

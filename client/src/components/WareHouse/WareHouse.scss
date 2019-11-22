@@ -56,11 +56,16 @@
   }
 
   &__row {
+    &:first-child {
+      @include flex-display-row;
+      justify-content: space-between;
+    }
+
     @include tablet-size {
       @include flex-display-row;
       justify-content: space-between;
       margin-bottom: 32px;
-      
+
       &:nth-child(2) {
         margin-bottom: 24px;
       }
@@ -103,13 +108,11 @@
   }
 
   &__arrowIcon {
-    @include tablet-size {
       background-image: url(../../assets/Icons/SVG/Icon-arrow-right.svg);
       background-repeat: no-repeat;
       margin-top: 14px;
       width: 11px;
       height: 18px;
-    }
   }
 
   &__tabletIcon {
@@ -119,9 +122,7 @@
   }
 
   &__desktopIcon {
-    @include tablet-size {
-      display: none;
-    }
+    display: none;
     @include desktop-size {
       display: block;
     }

@@ -45,7 +45,7 @@ class App extends React.Component {
           <Switch>
             <Route path='/' exact render={() => <InventoryPage products= {this.state.products}/>} />
             <Route path='/warehouses' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
-            <Route path="/warehouses/warehouse" render={() => <SpecificWarehousePage products= {this.state.products}/>} />
+            <Route path="/warehouses/:id" render={() => <SpecificWarehousePage products= {this.state.products}/>} />
             <Route path="/products" exact component={ProductPage}></Route>
           </Switch>
         </BrowserRouter>
