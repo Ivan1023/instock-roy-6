@@ -46,6 +46,24 @@
         }
       }
 
+      &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet-size {
+          display: none;
+        }
+
+        &__tablet {
+          display: none;
+
+          @include tablet-size {
+            display: flex;
+          }
+        }
+      }
+
       &__data {
         padding-top: 2%;
 
@@ -68,13 +86,6 @@
           @include tablet-size {
             display: none;
           }
-          //the dots for the mobile view only
-          &::after {
-            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-            background-repeat: no-repeat;
-            width: 5px;
-            margin: 0;
-          }
         }
 
         //the table heading for the mobile view only
@@ -96,16 +107,6 @@
         &-firstTitle {
           margin: 0;
           margin-top: 15px;
-        }
-
-        &-input {
-          display: none;
-          @include tablet-size {
-            display: block;
-            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-            background-repeat: no-repeat;
-            width: 5px;
-          }
         }
       }
     }
@@ -131,4 +132,11 @@
     font-size: 16px;
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
   }
+}
+
+.remove-button{
+  display: block;
+  content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+  background-repeat: no-repeat;
+  width: 5px;
 }
