@@ -15,7 +15,7 @@ class App extends React.Component {
   }
 
   getInventory = () => {
-    Axios.get(`${this.Url}/inventorydata`)
+    Axios.get(`${this.Url}/inventory`)
     .then(response => {
       this.setState({
         products: response.data
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   getWarehouse = () => {
-    Axios.get(`${this.Url}/locationdata`)
+    Axios.get(`${this.Url}/locations`)
     .then(response => {
       this.setState({
         warehouses: response.data
@@ -43,8 +43,8 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route path='/' exact render={() => <InventoryPage products= {this.state.products}/>} />
-            <Route path='/location' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
-            <Route path="/location/:id" render={(props) => <SpecificWarehousePage {...props} products= {this.state.products}/>} />
+            <Route path='/locations' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
+            <Route path="/locations/:id" render={(props) => <SpecificWarehousePage {...props} products= {this.state.products}/>} />
             <Route path="/products" exact component={ProductPage}></Route>
           </Switch>
         </BrowserRouter>

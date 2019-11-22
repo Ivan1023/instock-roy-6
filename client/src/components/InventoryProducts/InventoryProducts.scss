@@ -71,12 +71,20 @@
             display: none;
           }
           //the dots for the mobile view only
-          &::after {
-            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-            background-repeat: no-repeat;
-            width: 5px;
-            margin: 0;
-          }
+          // &::after {
+          //   content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+          //   background-repeat: no-repeat;
+          //   width: 5px;
+          //   margin: 0;
+          // }
+        }
+
+        .test {
+          // background-image: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+          display: block;
+          content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+          background-repeat: no-repeat;
+          width: 5px;
         }
 
         //the table heading for the mobile view only
@@ -94,7 +102,6 @@
           }
         }
 
-      
         &-firstTitle {
           margin: 0;
           margin-top: 15px;
@@ -115,7 +122,6 @@
 }
 
 .dropdown {
-  
   position: relative;
 
   &__position {

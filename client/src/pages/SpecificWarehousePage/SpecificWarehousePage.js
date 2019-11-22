@@ -10,7 +10,7 @@ class SpecificWarehousePage extends React.Component {
     }
     getWarehouse = (id) => {
         if (id) {
-            Axios.get(`${this.url}/locationdata/${id}/`)
+            Axios.get(`${this.url}/locations/${id}/`)
                 .then(response => {
                     this.setState({
                         warehouse: response.data

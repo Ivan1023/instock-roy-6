@@ -14,7 +14,7 @@ export default class Nav extends React.Component {
                 </Link>
                 <div className="nav__links-container">
                     <Link to="/" className="nav__inventory-link nav__active-link">Inventory</Link>
-                    <Link to="/location" className="nav__location-link">Locations</Link>
+                    <Link to="/locations" className="nav__location-link">Locations</Link>
                 </div>
             </header>
         )

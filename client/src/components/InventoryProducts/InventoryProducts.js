@@ -1,6 +1,7 @@
 import React from 'react';
 import './InventoryProducts.scss';
 // import { Link } from 'react-router-dom';
+import image from '../../assets/Icons/SVG/Icon-kebab-default.svg'
 
 class InventoryProducts extends React.Component {
     container = React.createRef();
@@ -52,7 +53,7 @@ class InventoryProducts extends React.Component {
                             return (
                                 <tr className="main__table-body__head" key={item.id}>
                                     <td className="main__table-body__data">
-                                        <p className="main__table-body__data-item">Item</p>
+                                    <p className="main__table-body__data-item">Item<img onClick={this.handleButtonClick} className="test" /></p>
                                         <h3 className="main__table-body__data-firstTitle">{item.name}</h3>{item.description}
                                     </td>
                                     <td className="main__table-body__data" data-label="Last Ordered">{item.lastOrdered}</td>

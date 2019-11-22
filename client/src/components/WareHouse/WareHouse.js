@@ -3,9 +3,6 @@ import './WareHouse.scss';
 import { Link } from 'react-router-dom';
 
 class WareHouse extends React.Component {
-    postInventory = () => {
-    
-    }
     render() {
         return (
             <>
@@ -22,7 +19,6 @@ class WareHouse extends React.Component {
                         </div>
                     </div>
                     {this.props.warehouses.map((item) => {
-                        console.log(item)
                         return (
                             <div className="main__content-list__table" key={item.id}>
                                 <div className="main__content-list__row">
@@ -30,7 +26,7 @@ class WareHouse extends React.Component {
                                         <h2 className="main__content-list__address-title">{item.name}</h2>
                                         <span>{item.address.street}</span>
                                     </div>
-                                    <Link to={`/location/${item.id}`}><div className="main__content-list__arrowIcon main__content-list__tabletIcon"></div></Link>
+                                    <Link to={`/locations/${item.id}`}><div className="main__content-list__arrowIcon main__content-list__tabletIcon"></div></Link>
                                 </div>
                                 <div className="main__content-list__row">
                                     <div className="main__content-list__address">
@@ -45,7 +41,7 @@ class WareHouse extends React.Component {
                                         <span>{item.inventoryCategories}</span>
                                     </div>
                                 </div>
-                                <Link to= {`/location/${item.id}`}><div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div></Link>
+                                <Link to= {`/locations/${item.id}`}><div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div></Link>
                             </div>
                         );
                     })}

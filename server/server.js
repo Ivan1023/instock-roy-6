@@ -7,7 +7,7 @@ const getInventoryData = require('./routeComponent/getInventoryData')
 
 app.use(cors());
 app.use(express.json())
-app.use('/location', getLocationData)
+app.use('/locations', getLocationData)
 app.use('/inventory', getInventoryData)
 
 
