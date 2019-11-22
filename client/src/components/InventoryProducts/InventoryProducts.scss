@@ -48,6 +48,24 @@
         }
       }
 
+      &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet-size {
+          display: none;
+        }
+
+        &__tablet {
+          display: none;
+
+          @include tablet-size {
+            display: flex;
+          }
+        }
+      }
+
       &__data {
         padding-top: 2%;
 
@@ -70,7 +88,7 @@
           @include tablet-size {
             display: none;
           }
-          //the dots for the mobile view only
+          // // the dots for the mobile view only
           // &::after {
           //   content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
           //   background-repeat: no-repeat;
@@ -79,43 +97,35 @@
           // }
         }
 
-        .test {
-          // background-image: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+        &-remove-button {
           display: block;
           content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
           background-repeat: no-repeat;
           width: 5px;
-        }
-
-        //the table heading for the mobile view only
-        &::before {
-          @include subheader-mobile-style;
-          content: attr(data-label);
-          padding: 24px 0 10px 0;
-          text-transform: uppercase;
-          color: #afafaf;
-          display: block;
 
           @include tablet-size {
-            @include subheader-tablet-style;
             display: none;
           }
         }
+      }
+      //the table heading for the mobile view only
+      &::before {
+        @include subheader-mobile-style;
+        content: attr(data-label);
+        padding: 24px 0 10px 0;
+        text-transform: uppercase;
+        color: #afafaf;
+        display: block;
 
-        &-firstTitle {
-          margin: 0;
-          margin-top: 15px;
-        }
-
-        &-input {
+        @include tablet-size {
+          @include subheader-tablet-style;
           display: none;
-          @include tablet-size {
-            display: block;
-            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-            background-repeat: no-repeat;
-            width: 5px;
-          }
         }
+      }
+
+      &-firstTitle {
+        margin: 0;
+        margin-top: 15px;
       }
     }
   }
