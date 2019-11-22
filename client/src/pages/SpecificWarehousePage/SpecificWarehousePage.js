@@ -23,10 +23,10 @@ class SpecificWarehousePage extends React.Component {
         this.getWarehouse(this.props.match.params.id);
     }
     render() {
-        console.log(this.state);
         if (this.state.warehouse.address && this.state.warehouse.contact) {
             let { name, title, phone, email } = this.state.warehouse.contact;
             let { street, postal, city, province } = this.state.warehouse.address;
+            let { products } = this.props;
             return (
                 <>
                     <main className="main__content">
@@ -47,7 +47,7 @@ class SpecificWarehousePage extends React.Component {
                             </div>
                         </article>
                     </main>
-                    <InventoryProducts products={this.props.products} />
+                     <InventoryProducts products={products.filter(item => item.warehouseId === this.state.warehouse.id)} />
                 </>
             )
         }
