@@ -42,7 +42,7 @@ class InventoryPage extends React.Component {
                     </section>
                     <InventoryProducts products={this.props.products}/>
                     <div className="modal">
-                        <button onClick={this.openModal} className="modal__button">+</button>
+                        <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
                         <Modal
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.afterOpenModal}

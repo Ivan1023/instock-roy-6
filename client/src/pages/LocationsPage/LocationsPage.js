@@ -37,7 +37,7 @@ class LocationsPage extends React.Component {
                             <WareHouse warehouses = {this.props.warehouses}/>
                         </section>
                         <div className="modal">
-                            <button onClick={this.openModal} className="modal__button">+</button>
+                            <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
                             <Modal
                                 isOpen={this.state.modalIsOpen}
                                 onAfterOpen={this.afterOpenModal}
