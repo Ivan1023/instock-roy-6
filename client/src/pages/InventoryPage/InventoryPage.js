@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import '../../pages/LocationsPage/LocationsPage.scss'
-
+import '../../style/modal.scss'
 import InventoryModal from '../../components/InventoryModal/InventoryModal'
 import InventoryProducts from '../../components/InventoryProducts/InventoryProducts';
 
@@ -41,8 +41,8 @@ class InventoryPage extends React.Component {
                         </article>
                     </section>
                     <InventoryProducts products={this.props.products}/>
-                    <div>
-                        <button onClick={this.openModal}>Open Modal</button>
+                    <div className="modal">
+                        <button onClick={this.openModal} className="modal__button">+</button>
                         <Modal
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.afterOpenModal}

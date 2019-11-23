@@ -3,7 +3,9 @@ import './LocationsPage.scss';
 import WareHouse from '../../components/WareHouse/WareHouse';
 import Modal from 'react-modal';
 import  '../../components/WareHouseModal/WareHouseModal.scss'
+import '../../style/modal.scss'
 import WareHouseModal from '../../components/WareHouseModal/WareHouseModal'
+import '../../assets/Icons/SVG/Icon-add.svg'
 
 class LocationsPage extends React.Component {
 
@@ -21,7 +23,9 @@ class LocationsPage extends React.Component {
         this.setState({modalIsOpen: false});
       }
 
+      
         render() {
+            
             return (
                 <>
                     <main>
@@ -32,17 +36,18 @@ class LocationsPage extends React.Component {
                             </article>
                             <WareHouse warehouses = {this.props.warehouses}/>
                         </section>
-                        
-                        <button onClick={this.openModal}>ModalTest</button>
-                        <Modal
-                            isOpen={this.state.modalIsOpen}
-                            onAfterOpen={this.afterOpenModal}
-                            onRequestClose={this.closeModal}
-                            className="content"
-                            overlayClassName="overlay"
-                            >
-                            <WareHouseModal/>
-                        </Modal>
+                        <div className="modal">
+                            <button onClick={this.openModal} className="modal__button">+</button>
+                            <Modal
+                                isOpen={this.state.modalIsOpen}
+                                onAfterOpen={this.afterOpenModal}
+                                onRequestClose={this.closeModal}
+                                className="content"
+                                overlayClassName="overlay"
+                                >
+                                <WareHouseModal/>
+                            </Modal>
+                        </div>
                     </main>
                 </>
             )

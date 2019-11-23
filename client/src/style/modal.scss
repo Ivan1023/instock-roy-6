@@ -1,0 +1,18 @@
+@import './variables.scss';
+
+.modal {
+    
+    &__button {
+    background-color: $instock-blue-color;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    }
+
+}
