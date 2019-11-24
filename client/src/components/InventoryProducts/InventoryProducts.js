@@ -3,11 +3,7 @@ import './InventoryProducts.scss';
 import RemoveButton from '../RemoveButton/RemoveButton'
 
 class InventoryProducts extends React.Component {
-    
-    
-
     render() {
-
         return (
             < article className="main" >
                 <table className="main__table">

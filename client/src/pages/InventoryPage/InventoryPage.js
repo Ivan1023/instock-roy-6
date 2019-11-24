@@ -6,29 +6,29 @@ import InventoryModal from '../../components/InventoryModal/InventoryModal'
 import InventoryProducts from '../../components/InventoryProducts/InventoryProducts';
 
 const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)',
-      height                : '75%'
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        height: '75%'
     }
-  };
+};
 
 class InventoryPage extends React.Component {
     state = {
         modalIsOpen: false
     }
 
-    openModal = ()=>{
-        this.setState({modalIsOpen: true})
+    openModal = () => {
+        this.setState({ modalIsOpen: true })
     }
-    
-    closeModal = ()=> {
-        this.setState({modalIsOpen: false});
-      }
+
+    closeModal = () => {
+        this.setState({ modalIsOpen: false });
+    }
 
     render() {
         return (
@@ -44,13 +44,13 @@ class InventoryPage extends React.Component {
                     <div className="modal">
                         <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
                         <Modal
-                        isOpen={this.state.modalIsOpen}
-                        onAfterOpen={this.afterOpenModal}
-                        onRequestClose={this.closeModal}
-                        style={customStyles}
-                        contentLabel="Example Modal"
+                            isOpen={this.state.modalIsOpen}
+                            onAfterOpen={this.afterOpenModal}
+                            onRequestClose={this.closeModal}
+                            style={customStyles}
+                            contentLabel="Example Modal"
                         >
-                        <InventoryModal/>
+                            <InventoryModal />
                         </Modal>
                     </div>
                 </main>

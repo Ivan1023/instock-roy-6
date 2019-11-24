@@ -1,6 +1,4 @@
 import React from 'react';
-import '../InventoryProducts/InventoryProducts.scss'
-
 
 class RemoveButton extends React.Component{
     container = React.createRef();
@@ -33,7 +31,6 @@ class RemoveButton extends React.Component{
     }
 
     render () {
-    
         return (
             <div className="dropdown" ref={this.container}>
                 <img onClick={this.handleButtonClick} alt="3 dots" className="remove-button" />

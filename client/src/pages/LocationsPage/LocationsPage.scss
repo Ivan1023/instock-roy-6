@@ -52,11 +52,28 @@
       }
 
       @include tablet-size {
-          width: 35%;
+        width: 35%;
       }
 
       @include desktop-size {
         width: 24%;
+      }
+    }
+
+    &__addButton {
+      width: 60px;
+      height: 60px;
+      bottom: 10%;
+      right: 10%;
+      border-radius: 50%;
+      position: fixed;
+      background-color: $instock-blue-color;
+      border: none;
+
+      @include tablet-size {
+        width: 80px;
+        height: 80px;
+        right: 15%;
       }
     }
   }
