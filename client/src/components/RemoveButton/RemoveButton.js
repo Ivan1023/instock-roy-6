@@ -31,8 +31,7 @@ class RemoveButton extends React.Component{
     }
 
     render () {
-    
-        console.log(this.props)
+        const { remove, id } = this.props;
         return (
             <div className="dropdown" ref={this.container}>
                 <img onClick={this.handleButtonClick} alt="3 dots" className="remove-button" />

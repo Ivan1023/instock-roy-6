@@ -20,8 +20,9 @@ router.get('/:id', (request, response) => {
 })
 
 router.delete('/:id', (request, response) => {
-  const inventoryIndex = invData.findIndex(item => { item.id == request.params.id })
-
+  const inventoryIndex = invData.findIndex((item) => {
+    return item.id == request.params.id
+  })
   if (inventoryIndex >= 0) {
     invData.splice(inventoryIndex, 1)
     response.send('Item has been deleted')
