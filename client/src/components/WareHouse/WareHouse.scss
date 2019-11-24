@@ -125,6 +125,7 @@
     display: none;
     @include desktop-size {
       display: block;
+      margin-left: 25px;
     }
   }
 }

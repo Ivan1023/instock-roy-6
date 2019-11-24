@@ -3,7 +3,11 @@ import './InventoryProducts.scss';
 import RemoveButton from '../RemoveButton/RemoveButton'
 
 class InventoryProducts extends React.Component {
+    
+    
+
     render() {
+
         return (
             < article className="main" >
                 <table className="main__table">
@@ -22,7 +26,10 @@ class InventoryProducts extends React.Component {
                             return (
                                 <tr className="main__table-body__head" key={item.id}>
                                     <td className="main__table-body__data">
-                                    <p className="main__table-body__data-item">Item<RemoveButton /></p>
+                                        <div className="main__table-body__container">
+                                            <p className="main__table-body__data-item">Item</p>
+                                            <div className="main__table-body__container"><RemoveButton/></div>
+                                        </div>
                                         <h3 className="main__table-body__data-firstTitle">{item.name}</h3>{item.description}
                                     </td>
                                     <td className="main__table-body__data" data-label="Last Ordered">{item.lastOrdered}</td>

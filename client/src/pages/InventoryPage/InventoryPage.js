@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import addImage from '../../assets/Icons/SVG/Icon-add.svg';
 import '../../pages/LocationsPage/LocationsPage.scss'
-
+import '../../style/modal.scss'
 import InventoryModal from '../../components/InventoryModal/InventoryModal'
 import InventoryProducts from '../../components/InventoryProducts/InventoryProducts';
 
@@ -42,8 +42,8 @@ class InventoryPage extends React.Component {
                         </article>
                     </section>
                     <InventoryProducts products={this.props.products}/>
-                    <div>
-                        <button className="main__content-header__addButton"  onClick={this.openModal}><img src={addImage} alt="add" /></button>
+                    <div className="modal">
+                        <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
                         <Modal
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.afterOpenModal}

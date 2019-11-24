@@ -1,3 +1,141 @@
+// @import "../../style/base.scss";
+
+// .main {
+//   padding: 0 16px;
+
+//   @include tablet-size {
+//     padding: 32px 24px;
+//   }
+//   @include desktop-size {
+//     padding: 48px 180px;
+//   }
+
+//   &__table {
+//     width: 100%;
+//     border-collapse: collapse;
+
+//     &-titles {
+//       display: none;
+//       @include tablet-size {
+//         display: table-header-group;
+//       }
+//       &-row {
+//         text-align: left;
+//         @include pargraph-tablet-style;
+//         color: $silver-color;
+//         text-transform: uppercase;
+//       }
+//     }
+
+//     &-body {
+//       &__group {
+//         @include flex-display-row;
+//         justify-content: space-between;
+
+//         @include tablet-size {
+//           display: block;
+//         }
+//       }
+
+//       &__head {
+//         @include flex-display-column;
+//         border-bottom: 1px solid $divider-color;
+//         height: 80%;
+//         @include tablet-size {
+//           height: 120px;
+//           padding: 32px 0;
+//           display: table-row;
+//         }
+//       }
+
+//       &__data {
+//         padding-top: 2%;
+
+//         &:first-child {
+//           @include tablet-size {
+//             width: 29%;
+//             padding: 0;
+//           }
+//           @include desktop-size {
+//             width: 44%;
+//           }
+//         }
+
+//         &-item {
+//           @include flex-display-row;
+//           justify-content: space-between;
+//           @include subheader-tablet-style;
+//           color: $silver-color;
+//           text-transform: uppercase;
+//           @include tablet-size {
+//             display: none;
+//           }
+//           //the dots for the mobile view only
+//           &::after {
+//             content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+//             background-repeat: no-repeat;
+//             width: 5px;
+//             margin: 0;
+//           }
+//         }
+
+//         //the table heading for the mobile view only
+//         &::before {
+//           @include subheader-mobile-style;
+//           content: attr(data-label);
+//           padding: 24px 0 10px 0;
+//           text-transform: uppercase;
+//           color: #afafaf;
+//           display: block;
+
+//           @include tablet-size {
+//             @include subheader-tablet-style;
+//             display: none;
+//           }
+//         }
+
+      
+//         &-firstTitle {
+//           margin: 0;
+//           margin-top: 15px;
+//         }
+
+//         &-input {
+//           display: none;
+//           @include tablet-size {
+//             display: block;
+//             content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+//             background-repeat: no-repeat;
+//             width: 5px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .dropdown {
+  
+//   position: relative;
+
+//   &__position {
+//     position: absolute;
+//     right: 0;
+//     z-index: 2;
+//     border: none;
+//     border-radius: 4px;
+//     background-color: white;
+//     outline: none;
+//     width: 145px;
+//     height: 40px;
+//     text-align: left;
+//     padding: 0 0 0 20px;
+//     font-size: 16px;
+//     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+//   }
+// }
+
+
 @import "../../style/base.scss";
 
 .main {
@@ -39,12 +177,28 @@
 
       &__head {
         @include flex-display-column;
-        border-bottom: 1px solid $divider-color;
-        height: 80%;
+        padding: 24px 0;
         @include tablet-size {
-          height: 120px;
           padding: 32px 0;
           display: table-row;
+        }
+      }
+
+      &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet-size {
+          display: none;
+        }
+
+        &__tablet {
+          display: none;
+
+          @include tablet-size {
+            display: flex;
+          }
         }
       }
 
@@ -70,13 +224,6 @@
           @include tablet-size {
             display: none;
           }
-          //the dots for the mobile view only
-          &::after {
-            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-            background-repeat: no-repeat;
-            width: 5px;
-            margin: 0;
-          }
         }
 
         //the table heading for the mobile view only
@@ -98,16 +245,6 @@
         &-firstTitle {
           margin: 0;
           margin-top: 15px;
-        }
-
-        &-input {
-          display: none;
-          @include tablet-size {
-            display: block;
-            content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
-            background-repeat: no-repeat;
-            width: 5px;
-          }
         }
       }
     }
@@ -133,4 +270,11 @@
     font-size: 16px;
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
   }
+}
+
+.remove-button{
+  display: block;
+  content: url("../../assets/Icons/SVG/Icon-kebab-default.svg");
+  background-repeat: no-repeat;
+  width: 5px;
 }
