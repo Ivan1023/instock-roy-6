@@ -6,22 +6,22 @@ class InventoryProducts extends React.Component {
     container = React.createRef();
     state = {
         open: false,
-      };
+    };
 
     handleButtonClick = () => {
         this.setState(state => {
             return {
-            open: !state.open,
+                open: !state.open,
             };
         });
     };
 
     handleClickOutside = event => {
         if (this.container.current && !this.container.current.contains(event.target)) {
-        this.setState({
-        open: false,
-        });
-    }
+            this.setState({
+                open: false,
+            });
+        }
     };
 
     componentDidMount() {
@@ -29,9 +29,9 @@ class InventoryProducts extends React.Component {
     }
 
     componentWillUnmount() {
-      document.removeEventListener("mousedown", this.handleClickOutside);
+        document.removeEventListener("mousedown", this.handleClickOutside);
     }
-      
+
 
     render() {
 
@@ -49,24 +49,27 @@ class InventoryProducts extends React.Component {
                             <th></th>
                         </tr>
                     </thead>
-                    
                     <tbody className="main__table-body">
-                        <tr className="main__table-body__head">
-                            <td className="main__table-body__data">
-                                <p className="main__table-body__data-item">Item</p>
-                                <Link to="/products"><h3 className="main__table-body__data-firstTitle">Product Name Here</h3></Link>Here is a very brief description of the product in the inventory...
-                            </td>
-                            <td className="main__table-body__data" data-label="Last Ordered">05/24/2018</td>
-                            <td className="main__table-body__data" data-label="Location">Toronto, CAN</td>
-                            <td className="main__table-body__data" data-label="Quantity">12,000</td>
-                            <td className="main__table-body__data" data-label="Status">In Stock</td>
-                            <td className="main__table-body__data">
-                                <div className="dropdown" ref={this.container}>
-                                    <img onClick={this.handleButtonClick} alt="3 dots" className="main__table-body__data-input"/>
-                                    {this.state.open && (<button className="dropdown__position">Remove</button>)}
-                                </div>
-                            </td>
-                        </tr>
+                        {this.props.products.map((item) => {
+                            return (
+                                <tr className="main__table-body__head" key={item.id}>
+                                    <td className="main__table-body__data">
+                                        <p className="main__table-body__data-item">Item</p>
+                                        <h3 className="main__table-body__data-firstTitle">{item.name}</h3>{item.description}
+                                    </td>
+                                    <td className="main__table-body__data" data-label="Last Ordered">{item.lastOrdered}</td>
+                                    <td className="main__table-body__data" data-label="Location">{item.location}</td>
+                                    <td className="main__table-body__data" data-label="Quantity">{item.quantity}</td>
+                                    <td className="main__table-body__data" data-label="Status">{item.isInstock ? "In Stock" : "Out of Stock"}</td>
+                                    <td className="main__table-body__data">
+                                        <div className="dropdown" ref={this.container}>
+                                            <img onClick={this.handleButtonClick} alt="3 dots" className="main__table-body__data-input" />
+                                            {this.state.open && (<button className="dropdown__position">Remove</button>)}
+                                        </div>
+                                    </td>
+                                </tr>
+                            );
+                        })}
                     </tbody>
                 </table>
             </article >

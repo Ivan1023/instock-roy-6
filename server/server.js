@@ -11,7 +11,6 @@ app.use('/locationdata', getLocationData)
 app.use('/inventorydata', getInventoryData)
 
 
-
 app.listen(8080,()=>{
     console.log("server is running on 8080, you're welcome")
 })
