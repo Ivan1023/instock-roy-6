@@ -27,7 +27,6 @@ router.post('/', (request, response)=>{
     }
 
     console.log('------Check to see if data is sent to data page------')
-    console.log(locationUpload)
 
     locationData.push(locationUpload);
     response.send()
