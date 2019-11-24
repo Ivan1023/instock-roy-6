@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal';
-import addImage from '../../assets/Icons/SVG/Icon-add.svg';
 import '../../pages/LocationsPage/LocationsPage.scss'
 import '../../style/modal.scss'
 import InventoryModal from '../../components/InventoryModal/InventoryModal'
@@ -41,7 +40,7 @@ class InventoryPage extends React.Component {
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
                     </section>
-                    <InventoryProducts products={this.props.products}/>
+                    <InventoryProducts products={this.props.products} remove={this.props.remove}/>
                     <div className="modal">
                         <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
                         <Modal

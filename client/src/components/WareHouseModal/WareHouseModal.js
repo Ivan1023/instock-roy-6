@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-// import './LocationsPage.scss';
 import './WareHouseModal.scss'
 
 
@@ -22,7 +21,6 @@ class WareHouseModal extends React.Component {
             this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(this.state)
     }
 
     submitHandler = (event) => {
@@ -45,9 +43,8 @@ class WareHouseModal extends React.Component {
             alert("Something went wrong. We could not add your warehouse")
         })
     }
-    
+        
     render() {
-        // console.log(this.state)
         return (
             <>
                 <h1 className="warehouse-modal__title">Add New</h1>
@@ -97,7 +94,7 @@ class WareHouseModal extends React.Component {
                     </div>
                     <div className="warehouse-modal__buttons-container">
                         <button className="warehouse-modal__cancel-button" onClick={this.closeModal}>CANCEL</button>
-                        <button className="warehouse-modal__save-button" OnClick={this.closeModal} >SAVE</button>
+                        <button className="warehouse-modal__save-button" onClick={this.closeModal} >SAVE</button>
                     </div>
                     
                 </form>
