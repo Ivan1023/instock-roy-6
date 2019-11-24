@@ -22,6 +22,12 @@ class App extends React.Component {
       })
     })
   }
+  removeInventory = (id) => {
+    Axios.delete(`${this.Url}/inventory/${id}`)
+    .then(response => {
+      return this.getInventory()
+    })
+  }
 
   getWarehouse = () => {
     Axios.get(`${this.Url}/locations`)
@@ -46,7 +52,7 @@ class App extends React.Component {
         <BrowserRouter>
           <Nav />
           <Switch>
-            <Route path='/' exact render={() => <InventoryPage products= {this.state.products} />} />
+            <Route path='/' exact render={() => <InventoryPage products= {this.state.products} remove={this.removeInventory}/>} />
             <Route path='/locations' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
             <Route path="/locations/:id" render={(props) => <SpecificWarehousePage {...props} products= {this.state.products}/>} />
             <Route path="/products" exact component={ProductPage}></Route>
