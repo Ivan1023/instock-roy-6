@@ -38,12 +38,18 @@ class App extends React.Component {
     this.getWarehouse();
   }
 
+  componentDidUpdate(prevState){
+    if(this.prevState.products !== this.state.products || this.state.products !== undefined){
+      this.getInventory();
+    }
+  }
+
   render() {
     return (
         <BrowserRouter>
           <Nav />
           <Switch>
-            <Route path='/' exact render={() => <InventoryPage products= {this.state.products}/>} />
+            <Route path='/' exact render={() => <InventoryPage getInventory={this.getInventory} products= {this.state.products}/>} />
             <Route path='/warehouses' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
             <Route path="/warehouses/warehouse" component={SpecificWarehousePage}></Route>
             <Route path="/products" exact component={ProductPage}></Route>

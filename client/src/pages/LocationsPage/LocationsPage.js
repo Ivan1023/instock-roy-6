@@ -17,7 +17,6 @@ class LocationsPage extends React.Component {
         console.log("you clicked the open modal")
         this.setState({modalIsOpen: true});
       }
-     
 
       closeModal=()=>{
         this.setState({modalIsOpen: false});

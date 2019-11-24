@@ -40,7 +40,7 @@ class InventoryPage extends React.Component {
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
                     </section>
-                    <InventoryProducts products={this.props.products}/>
+                    <InventoryProducts getInventory={this.props.getInventory} products={this.props.products}/>
                     <div className="modal">
                         <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
                         <Modal
