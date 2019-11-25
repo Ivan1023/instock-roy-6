@@ -2,8 +2,6 @@ import React from 'react';
 import Axios from 'axios';
 import './WareHouseModal.scss'
 
-
-
 class WareHouseModal extends React.Component {
     state = {
         name: '',
@@ -15,7 +13,6 @@ class WareHouseModal extends React.Component {
         email: '',
         categories: ''
     }
-
 
     changeHandler = (event) => {
         if (event.target.value !== '') {

@@ -1,9 +1,10 @@
 import React from 'react';
 import Modal from 'react-modal';
-import '../../pages/LocationsPage/LocationsPage.scss'
-import '../../style/modal.scss'
-import InventoryModal from '../../components/InventoryModal/InventoryModal'
+import '../../pages/LocationsPage/LocationsPage.scss';
+import '../../style/modal.scss';
+import InventoryModal from '../../components/InventoryModal/InventoryModal';
 import InventoryProducts from '../../components/InventoryProducts/InventoryProducts';
+
 
 const customStyles = {
     content: {

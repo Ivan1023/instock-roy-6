@@ -1,11 +1,12 @@
 import React from 'react';
 import './InventoryProducts.scss';
-import RemoveButton from '../RemoveButton/RemoveButton'
+import RemoveButton from '../RemoveButton/RemoveButton';
+import { Link } from 'react-router-dom';
 
 class InventoryProducts extends React.Component {
     render() {
         return (
-            < article className="main" >
+            < article className="main">
                 <table className="main__table">
                     <thead className="main__table-titles">
                         <tr className="main__table-titles-row">
@@ -26,7 +27,7 @@ class InventoryProducts extends React.Component {
                                             <p className="main__table-body__data-item">Item</p>
                                             <div className="main__table-body__container"><RemoveButton/></div>
                                         </div>
-                                        <h3 className="main__table-body__data-firstTitle">{item.name}</h3>{item.description}
+                        <Link to={`/products/${item.id}`}><h3 className="main__table-body__data-firstTitle">{item.name}</h3></Link>{item.description}
                                     </td>
                                     <td className="main__table-body__data" data-label="Last Ordered">{item.lastOrdered}</td>
                                     <td className="main__table-body__data" data-label="Location">{item.location}</td>
