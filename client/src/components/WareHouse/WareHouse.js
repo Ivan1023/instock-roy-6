@@ -1,6 +1,7 @@
 import React from 'react';
 import './WareHouse.scss';
 import { Link } from 'react-router-dom';
+import RemoveButton from '../RemoveButton/RemoveButton';
 
 class WareHouse extends React.Component {
     render() {
@@ -37,11 +38,12 @@ class WareHouse extends React.Component {
                                         <span>{item.contact.phone}</span>
                                         <span>{item.contact.email}</span>
                                     </div>
-                                    <div className="main__content-list__address">
+                                    <div className="main__content-list__address flex">
                                         <span>{item.inventoryCategories}</span>
+                                        <RemoveButton remove={this.props.remove} id={item.id}/>
                                     </div>
                                 </div>
-                                <Link to= {`/locations/${item.id}`}><div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div></Link>
+                                <Link to={`/locations/${item.id}`}><div className="main__content-list__arrowIcon main__content-list__desktopIcon"> </div></Link>
                             </div>
                         );
                     })}
