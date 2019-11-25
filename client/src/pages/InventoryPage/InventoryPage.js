@@ -30,6 +30,12 @@ class InventoryPage extends React.Component {
         this.setState({ modalIsOpen: false });
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            this.props.getInventory();
+        }
+    }
+
     render() {
         return (
             <>
