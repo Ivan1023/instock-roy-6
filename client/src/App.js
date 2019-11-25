@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import LocationsPage from './pages/LocationsPage/LocationsPage';
 import InventoryPage from './pages/InventoryPage/InventoryPage';
@@ -16,42 +16,44 @@ class App extends React.Component {
 
   getInventory = () => {
     Axios.get(`${this.Url}/inventory`)
-    .then(response => {
-      this.setState({
-        products: response.data
+      .then(response => {
+        this.setState({
+          products: response.data
+        })
       })
-    })
+  }
+  removeInventory = (id) => {
+    Axios.delete(`${this.Url}/inventory/${id}`)
+      .then(response => {
+        return this.getInventory()
+      })
   }
 
   getWarehouse = () => {
     Axios.get(`${this.Url}/locations`)
-    .then(response => {
-      this.setState({
-        warehouses: response.data
+      .then(response => {
+        this.setState({
+          warehouses: response.data
+        })
       })
-    })
   }
 
   componentDidMount() {
     this.getInventory();
     this.getWarehouse();
   }
-  componentDidUpdate() {
-    //to display the data without refreshing the page
-    this.getWarehouse();
-  }
 
   render() {
     return (
-        <BrowserRouter>
-          <Nav />
-          <Switch>
-            <Route path='/' exact render={() => <InventoryPage products= {this.state.products} />} />
-            <Route path='/locations' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
-            <Route path="/locations/:id" render={(props) => <SpecificWarehousePage {...props} products= {this.state.products}/>} />
-            <Route path="/products" exact component={ProductPage}></Route>
-          </Switch>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Nav />
+        <Switch>
+          <Route path='/' exact render={(props) => <InventoryPage {...props} products={this.state.products} remove={this.removeInventory} />} />
+          <Route path='/locations' exact render={() => <LocationsPage warehouses={this.state.warehouses} />} />
+          <Route path="/locations/:id" render={(props) => <SpecificWarehousePage {...props} products={this.state.products} />} />
+          <Route path="/products" exact component={ProductPage}></Route>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
