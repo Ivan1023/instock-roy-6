@@ -11,12 +11,7 @@ router.get('/', (request, response) => {
 router.post('/', (req, res) => {
     // console.log(req.body)
 
-    if(req.body!== undefined) {
-        invData.push(req.body)
-    }
-    else{console.log('400 status')}
-
-    res.send(invData);
+console.log(req)
 })
 
 router.get('/:id', (request, response) => {
