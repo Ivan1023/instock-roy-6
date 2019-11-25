@@ -25,9 +25,9 @@ class InventoryProducts extends React.Component {
                                     <td className="main__table-body__data">
                                         <div className="main__table-body__container">
                                             <p className="main__table-body__data-item">Item</p>
-                                            <div className="main__table-body__container"><RemoveButton/></div>
+                                            <div className="main__table-body__container"><RemoveButton /></div>
                                         </div>
-                        <Link to={`/products/${item.id}`}><h3 className="main__table-body__data-firstTitle">{item.name}</h3></Link>{item.description}
+                                        <Link className="main__table-body__data-link" to={`/products/${item.id}`}><h3 className="main__table-body__data-firstTitle">{item.name}</h3></Link>{item.description}
                                     </td>
                                     <td className="main__table-body__data" data-label="Last Ordered">{item.lastOrdered}</td>
                                     <td className="main__table-body__data" data-label="Location">{item.location}</td>
@@ -35,7 +35,7 @@ class InventoryProducts extends React.Component {
                                     <td className="main__table-body__data" data-label="Status">{item.isInstock ? "In Stock" : "Out of Stock"}</td>
                                     <td className="main__table-body__data">
                                         <div className="main__table-body__container__tablet">
-                                            <RemoveButton remove={this.props.remove} id={item.id}/>
+                                            <RemoveButton remove={this.props.remove} id={item.id} />
                                         </div>
                                     </td>
                                 </tr>

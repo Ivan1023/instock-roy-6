@@ -108,6 +108,11 @@
           margin: 0;
           margin-top: 15px;
         }
+
+        &-link {
+          text-decoration: none;
+          color: $black-text-color;
+        }
       }
     }
   }

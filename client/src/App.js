@@ -45,9 +45,6 @@ class App extends React.Component {
         return this.getWarehouse()
       })
   }
-
-
-
   componentDidMount() {
     this.getInventory();
     this.getWarehouse();
@@ -61,7 +58,6 @@ class App extends React.Component {
           <Route path='/' exact render={(props) => <InventoryPage {...props} products={this.state.products} remove={this.removeInventory} />} />
           <Route path='/locations' exact render={(props) => <LocationsPage {...props} warehouses={this.state.warehouses} remove={this.removeWarehouse}/>} />
           <Route path="/locations/:id" render={(props) => <SpecificWarehousePage {...props} products={this.state.products} />} />
-          {/* <Route path="/products" render={(props) => <ProductPage products={this.state.products} />} /> */}
           <Route path="/products/:id" render={(props) => <ProductPage {...props} products={this.state.products} />} />
         </Switch>
       </BrowserRouter>
