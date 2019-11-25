@@ -1,0 +1,38 @@
+@import './base.scss';
+
+
+
+.modal {
+    
+    &__button {
+    background-color: $instock-blue-color;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+
+    &:focus {
+        outline: none;
+    }
+    
+        @include tablet-size {
+            width: 80px;
+            height: 80px;
+            font-size: 24px;
+        }
+    }
+
+    &__img {
+        background-image: url(../assets/Icons/SVG/Icon-add.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    
+
+}

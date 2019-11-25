@@ -1,11 +1,11 @@
-const express = require ('express');
+const express = require('express');
 const router = express.Router();
 const invData = require('../data/inventory.json')
 
 router.get('/', (request, response) => {
-    
-    response.send(invData)
-    
+
+  response.send(invData)
+
 })
 
 router.post('/', (req, res) => {
@@ -20,14 +20,27 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', (request, response) => {
-    //get the inventory item from the data
-    const inventoryItem = invData.find(item => item.id == request.params.id ); 
+  //get the inventory item from the data
+  const inventoryItem = invData.find(item => item.id == request.params.id);
 
-    // verfiy if the iventory item has data
-    inventoryItem ? 
-    response.send(inventoryItem) : 
+  // verfiy if the iventory item has data
+  inventoryItem ?
+    response.send(inventoryItem) :
     //return status 404 if theres no data.
     response.status(404).send('Item not found')
+})
+
+router.delete('/:id', (request, response) => {
+  const inventoryIndex = invData.findIndex((item) => {
+    return item.id == request.params.id
   })
+  if (inventoryIndex >= 0) {
+    invData.splice(inventoryIndex, 1)
+    response.send('Item has been deleted')
+  }
+  else {
+    response.status(400).send('Item not found')
+  }
+})
 
 module.exports = router;

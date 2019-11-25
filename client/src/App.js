@@ -8,15 +8,14 @@ import ProductPage from './pages/ProductPage/ProductPage';
 import Axios from 'axios';
 
 class App extends React.Component {
-  inventoryUrl = "http://localhost:8080/inventorydata";
-  locationUrl = "http://localhost:8080/locationdata";
+  Url = "http://localhost:8080";
   state = {
     products: [],
     warehouses: []
   }
 
   getInventory = () => {
-    Axios.get(`${this.inventoryUrl}`)
+    Axios.get(`${this.Url}/inventory`)
     .then(response => {
       this.setState({
         products: response.data
@@ -25,7 +24,7 @@ class App extends React.Component {
   }
 
   getWarehouse = () => {
-    Axios.get(`${this.locationUrl}`)
+    Axios.get(`${this.Url}/locations`)
     .then(response => {
       this.setState({
         warehouses: response.data
@@ -37,15 +36,19 @@ class App extends React.Component {
     this.getInventory();
     this.getWarehouse();
   }
+  componentDidUpdate() {
+    //to display the data without refreshing the page
+    this.getWarehouse();
+  }
 
   render() {
     return (
         <BrowserRouter>
           <Nav />
           <Switch>
-            <Route path='/' exact render={() => <InventoryPage products= {this.state.products}/>} />
-            <Route path='/warehouses' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
-            <Route path="/warehouses/warehouse" component={SpecificWarehousePage}></Route>
+            <Route path='/' exact render={() => <InventoryPage products= {this.state.products} />} />
+            <Route path='/locations' exact render={() => <LocationsPage warehouses= {this.state.warehouses}/>} />
+            <Route path="/locations/:id" render={(props) => <SpecificWarehousePage {...props} products= {this.state.products}/>} />
             <Route path="/products" exact component={ProductPage}></Route>
           </Switch>
         </BrowserRouter>
