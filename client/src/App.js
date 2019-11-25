@@ -22,12 +22,6 @@ class App extends React.Component {
         })
       })
   }
-  removeInventory = (id) => {
-    Axios.delete(`${this.Url}/inventory/${id}`)
-      .then(response => {
-        return this.getInventory()
-      })
-  }
 
   getWarehouse = () => {
     Axios.get(`${this.Url}/locations`)
@@ -37,6 +31,22 @@ class App extends React.Component {
         })
       })
   }
+
+  removeInventory = (id) => {
+    Axios.delete(`${this.Url}/inventory/${id}`)
+      .then(response => {
+        return this.getInventory()
+      })
+  }
+
+  removeWarehouse = (id) => {
+    Axios.delete(`${this.Url}/locations/${id}`)
+      .then(response => {
+        return this.getWarehouse()
+      })
+  }
+
+
 
   componentDidMount() {
     this.getInventory();
@@ -49,7 +59,7 @@ class App extends React.Component {
         <Nav />
         <Switch>
           <Route path='/' exact render={(props) => <InventoryPage {...props} products={this.state.products} remove={this.removeInventory} />} />
-          <Route path='/locations' exact render={() => <LocationsPage warehouses={this.state.warehouses} />} />
+          <Route path='/locations' exact render={(props) => <LocationsPage {...props} warehouses={this.state.warehouses} remove={this.removeWarehouse}/>} />
           <Route path="/locations/:id" render={(props) => <SpecificWarehousePage {...props} products={this.state.products} />} />
           <Route path="/products" exact component={ProductPage}></Route>
         </Switch>

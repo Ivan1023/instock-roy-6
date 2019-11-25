@@ -23,6 +23,12 @@ class LocationsPage extends React.Component {
         this.setState({ modalIsOpen: false });
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            this.props.getWarehouse();
+        }
+    }
+
     render() {
         return (
             <>
@@ -32,7 +38,7 @@ class LocationsPage extends React.Component {
                             <h1 className="main__content-header__title"> Locations </h1>
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
-                        <WareHouse warehouses={this.props.warehouses} />
+                        <WareHouse warehouses={this.props.warehouses} remove={this.props.remove}/>
                     </section>
                     <div className="modal">
                         <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
