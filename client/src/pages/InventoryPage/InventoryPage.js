@@ -30,6 +30,12 @@ class InventoryPage extends React.Component {
         this.setState({ modalIsOpen: false });
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            this.props.getInventory();
+        }
+    }
+
     render() {
         return (
             <>
@@ -40,7 +46,7 @@ class InventoryPage extends React.Component {
                             <input className="main__content-header__searchInput" type="text" name="search" placeholder="Search" />
                         </article>
                     </section>
-                    <InventoryProducts products={this.props.products}/>
+                    <InventoryProducts products={this.props.products} remove={this.props.remove} />
                     <div className="modal">
                         <button onClick={this.openModal} className="modal__button"><div className="modal__img">|</div></button>
                         <Modal
