@@ -8,6 +8,12 @@ router.get('/', (request, response) => {
 
 })
 
+router.post('/', (req, res) => {
+    // console.log(req.body)
+
+console.log(req)
+})
+
 router.get('/:id', (request, response) => {
   //get the inventory item from the data
   const inventoryItem = invData.find(item => item.id == request.params.id);

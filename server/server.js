@@ -13,7 +13,6 @@ app.use('/inventory', getInventoryData)
 app.use('/postlocation', postlocation)
 
 
-
 app.listen(8080,()=>{
     console.log("server is running on 8080, you're welcome")
 })
