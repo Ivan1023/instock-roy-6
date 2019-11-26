@@ -18,7 +18,7 @@ class ProductPage extends React.Component {
                                     <Link to="/"><div className="main__product-content-icon"></div></Link>
                                     <h1 className="main__product-content-box__title">{findItem.name}</h1>
                                 </article>
-                                <div className="main__product-content-box__instock">{findItem.isInstock ? 'Instock' : 'Out of Stock'}</div>
+                                <div className="main__product-content-box__instock"><button className="main__product-content-box__instockButton">{findItem.isInstock ? 'Instock' : 'Out of Stock'}</button></div>
                             </section>
 
                             <div className="main__product-content-description">
@@ -61,7 +61,7 @@ class ProductPage extends React.Component {
                                 </div>
                             </div>
 
-                            <button className="main__product-content-button" type="button">EDIT</button>
+                            <div className="main__product-content-buttondiv"> <button className="main__product-content-button" type="button">EDIT</button> </div>
 
                         </main>
                     </> : null}
