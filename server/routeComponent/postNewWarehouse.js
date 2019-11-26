@@ -1,10 +1,10 @@
-const express = require ('express');
+const express = require('express');
 const router = express.Router();
-const nanoid = require ('nanoid');
+const nanoid = require('nanoid');
 const locationData = require('../data/locations.json')
 
-router.post('/', (request, response)=>{
-    
+router.post('/', (request, response) => {
+
     const data = request.body;
     const id = nanoid(4);
 
@@ -28,9 +28,11 @@ router.post('/', (request, response)=>{
 
     console.log('------Check to see if data is sent to data page------')
 
-    locationData.push(locationUpload);
+    if (locationData) {
+        locationData.push(locationUpload);
+    }
     response.send()
-    
+
 })
 
 module.exports = router;

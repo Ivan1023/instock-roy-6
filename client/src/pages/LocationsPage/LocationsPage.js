@@ -6,7 +6,7 @@ import '../../components/WareHouseModal/WareHouseModal.scss'
 import '../../style/modal.scss'
 import WareHouseModal from '../../components/WareHouseModal/WareHouseModal'
 import '../../assets/Icons/SVG/Icon-add.svg'
-
+Modal.setAppElement('body');
 class LocationsPage extends React.Component {
 
     state = {

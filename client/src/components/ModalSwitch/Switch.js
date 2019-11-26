@@ -4,24 +4,15 @@ import '../ModalSwitch/Switch.scss'
 
 
 class SwitchModal extends React.Component {
-    constructor() {
-      super();
-      this.state = { checked: false };
-      this.handleChange = this.handleChange.bind(this);
-    }
-   
-    handleChange(checked) {
-      this.setState({ checked });
-    }
-   
     render() {
-      return (
-        <label>
-          <span>Switch with default style</span>
-          <Switch onChange={this.handleChange} checked={this.state.checked} />
-        </label>
-      );
+        let { isOn, handleToggle } = this.props;
+        return (
+            <label>
+                <span>Switch with default style</span>
+                <Switch onChange={handleToggle} checked={isOn} />
+            </label>
+        );
     }
-  }
+}
 
 export default SwitchModal

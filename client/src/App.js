@@ -49,7 +49,7 @@ class App extends React.Component {
     this.getInventory();
     this.getWarehouse();
   }
-
+  
   render() {
     return (
       <BrowserRouter>

@@ -4,7 +4,7 @@ import '../../pages/LocationsPage/LocationsPage.scss';
 import '../../style/modal.scss';
 import InventoryModal from '../../components/InventoryModal/InventoryModal';
 import InventoryProducts from '../../components/InventoryProducts/InventoryProducts';
-
+Modal.setAppElement('body');
 
 const customStyles = {
     content: {
