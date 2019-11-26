@@ -27,7 +27,7 @@ class InventoryProducts extends React.Component {
                                             <p className="main__table-body__data-item">Item</p>
                                             <div className="main__table-body__container"><RemoveButton/></div>
                                         </div>
-                        <Link to={`/products/${item.id}`}><h3 className="main__table-body__data-firstTitle">{item.name}</h3></Link>{item.description}
+                        <Link className="link" to={`/products/${item.id}`}><h3 className="main__table-body__data-firstTitle">{item.name}</h3></Link>{item.description}
                                     </td>
                                     <td className="main__table-body__data" data-label="Last Ordered">{item.lastOrdered}</td>
                                     <td className="main__table-body__data" data-label="Location">{item.location}</td>
