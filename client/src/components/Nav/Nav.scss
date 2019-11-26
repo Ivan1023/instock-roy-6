@@ -25,7 +25,7 @@
     &__inventory-link{
         width: 50%;
         text-decoration: none;
-        padding-bottom: 14px;
+        padding: 15px 0;
         color:$silver-color;
 
         text-align: center;
@@ -34,16 +34,14 @@
     &__location-link{
         width: 50%;
         text-decoration: none;
-        color:$silver-color;
-        width: 50%;
-        padding-bottom: 14px;
+        padding: 15px 0;
         text-align: center;
+        color:$silver-color;
     }
-    &__active-link{
-        color:$white-text-color;
-        border-bottom:3px solid white;
-        padding-bottom:14px
-        }
+    & .active {
+        border-bottom: 4px solid white;
+        color: white;
+    }
 
     @include tablet-size {
         height:80px;
@@ -69,19 +67,13 @@
         &__inventory-link{
             text-decoration: none;
             color:$silver-color;
-            padding:0%;
+            padding:27px 0;
         }
         &__location-link{
             text-decoration: none;
             color:$silver-color;
-            padding:0%;
+            padding:27px 0;
         }
-        &__active-link{
-            color:$white-text-color;
-            border-bottom:3px solid white;
-            padding-bottom:24px;
-            padding-top:31px;
-            }
     }
 
     @include desktop-size {
@@ -108,19 +100,13 @@
         &__inventory-link{
             text-decoration: none;
             color:$silver-color;
-            padding:0%;
+            padding:8.5% 0;
         }
         &__location-link{
             text-decoration: none;
             color:$silver-color;
-            padding:0%;
+            padding:8.5% 0;
         }
-        &__active-link{
-            color:$white-text-color;
-            border-bottom:3px solid white;
-            padding-bottom:25px;
-            padding-top:31px;
-            }
     }
 
 }

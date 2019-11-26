@@ -5,61 +5,66 @@ import { Link } from 'react-router-dom';
 class ProductPage extends React.Component {
 
     render() {
+        const findItem = this.props.products.find(item => {
+            return item.id === this.props.match.params.id
+        })
         return (
-
             <>
-                <main>
-                    <section className="product__content">
-                        <article className="product__content-box">
-                        <Link to="/"><div className="product__content-icon"></div></Link>
-                            <h1 className="product__content-box__title">Product Name</h1>
-                        </article>
-                        <div class="product__content-box__instock">In Stock</div>
-                    </section>
+                {findItem ?
+                    <>
+                        <main className="main__product">
+                            <section className="main__product-content">
+                                <article className="main__product-content-box">
+                                    <Link to="/"><div className="main__product-content-icon"></div></Link>
+                                    <h1 className="main__product-content-box__title">{findItem.name}</h1>
+                                </article>
+                                <div className="main__product-content-box__instock"><button className="main__product-content-box__instockButton">{findItem.isInstock ? 'Instock' : 'Out of Stock'}</button></div>
+                            </section>
 
-                    <div className="product__content-description">
-                        <div className="product__content-description-title">
-                            <span>ITEM DESCRIPTIONS</span>
-                            <p className="product__content-description__p">Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product</p>
-                        </div>
-
-                        <div className="box1">
-                            <div className="box1__content">
-                                <div className="product__content-description__items">
-                                    <span className="product__content-description__titles">ORDERED BY</span>
-                                    <p className="product__content-description__info">Mark Saunders</p>
+                            <div className="main__product-content-description">
+                                <div className="main__product-content-description-title">
+                                    <span>ITEM DESCRIPTIONS</span>
+                                    <p className="main__product-content-description__p">{findItem.description}</p>
                                 </div>
-                                <div className="product__content-description__items">
-                                    <span className="product__content-description__titles">REFERENCE NUMBER</span>
-                                    <p className="product__content-description__info">JK2020OISFBIO</p>
+
+                                <div className="box1">
+                                    <div className="box1__content">
+                                        <div className="main__product-content-description__items">
+                                            <span className="main__product-content-description__titles">ORDERED BY</span>
+                                            <p className="main__product-content-description__info">{findItem.id}</p>
+                                        </div>
+                                        <div className="main__product-content-description__items">
+                                            <span className="main__product-content-description__titles">REFERENCE NUMBER</span>
+                                            <p className="main__product-content-description__info">{findItem.warehouseId}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="box1__content">
+                                        <div className="main__product-content-description__items">
+                                            <span className="main__product-content-description__titles">LAST ORDERED</span>
+                                            <p className="main__product-content-description__info">{findItem.lastOrdered}</p>
+                                        </div>
+                                        <div className="main__product-content-description__items">
+                                            <span className="main__product-content-description__titles">LOCATION</span>
+                                            <p className="main__product-content-description__info">{findItem.location}</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="main__product-content-description__items">
+                                        <span className="main__product-content-description__titles">QUANTITY</span>
+                                        <p className="main__product-content-description__info">{findItem.quantity}</p>
+                                    </div>
+                                    <div className="main__product-content-description__items">
+                                        <span className="main__product-content-description__titles">CATEGORIES</span>
+                                        <p className="main__product-content-description__info">{findItem.categories}</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="box1__content">
-                                <div className="product__content-description__items">
-                                    <span className="product__content-description__titles">LAST ORDERED</span>
-                                    <p className="product__content-description__info">5/24/18</p>
-                                </div>
-                                <div className="product__content-description__items">
-                                    <span className="product__content-description__titles">LOCATION</span>
-                                    <p className="product__content-description__info">Toronto, CAN</p>
-                                </div>
-                            </div>
+                            <div className="main__product-content-buttondiv"> <button className="main__product-content-button" type="button">EDIT</button> </div>
 
-                            <div className="product__content-description__items">
-                        <span className="product__content-description__titles">QUANTITY</span>
-                        <p className="product__content-description__info">120000</p>
-                    </div>
-                    <div className="product__content-description__items">
-                        <span className="product__content-description__titles">CATEGORIES</span>
-                        <p className="product__content-description__info">Industrial, Automotive, Heavy, Mechanical, Engineering, Transportation, Sales</p>
-                    </div>
-                        </div>
-                    </div>
-
-                <button className="product__content-button" type="button">EDIT</button>
-
-                </main>
+                        </main>
+                    </> : null}
             </>
         )
     }

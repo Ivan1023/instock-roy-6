@@ -8,10 +8,9 @@ const postlocation = require('./routeComponent/postNewWarehouse')
 
 app.use(cors());
 app.use(express.json())
-app.use('/locationdata', getLocationData)
-app.use('/inventorydata', getInventoryData)
+app.use('/locations', getLocationData)
+app.use('/inventory', getInventoryData)
 app.use('/postlocation', postlocation)
-
 
 
 app.listen(8080,()=>{
