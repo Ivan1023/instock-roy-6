@@ -6,14 +6,13 @@ import '../InventoryModal/styles.scss';
 
 class InventoryModal extends React.Component {
   state = {
-    name: "",
-    description: "",
-    quantity: "",
-    lastOrdered: "",
-    location: "",
-    isInstock: "",
-    categories: "",
-    warehouseId: ""
+    name: '',
+    description: '',
+    quantity: '',
+    lastOrdered: '',
+    location: '',
+    isInstock: '',
+    categories: ''
 }
 
 changeHandler = (event) => {
@@ -29,13 +28,12 @@ submitHandler = (event) => {
 
     Axios.post('http://localhost:8080/inventory', {
         "name": this.state.name,
-        "description": this.state.address,
-        "quantity": this.state.location,
-        "lastOrdered": this.state.contactName,
-        "location": this.state.position,
-        "isInstock": this.state.phoneNumber,
-        "categories": this.state.email,
-        "warehouseId": this.state.categories
+        "description": this.state.description,
+        "quantity": this.state.quantity,
+        "lastOrdered": this.state.lastOrdered,
+        "location": this.state.location,
+        "isInstock": this.state.isInstock,
+        "categories": this.state.categories
     })
         .then(response => {
             alert("Your Product has been added")
@@ -54,21 +52,21 @@ submitHandler = (event) => {
               <div className="modal__tablet">
                   <div className="modal__textbox-tablet">
                     <h4 className="modal__label">Product</h4>
-                    <textarea className="modal__textbox" placeholder="Item name"></textarea>
+                    <textarea type="text" onChange={this.changeHandler} value={this.state.name} className="modal__textbox" name="name" placeholder="Item name"></textarea>
                   </div>
                   <div>
                     <h4 className="modal__label">Last Ordered</h4>
-                    <textarea className="modal__textbox" placeholder="yyyy-mm-dd"></textarea>
+                    <textarea onChange={this.changeHandler}  className="modal__textbox" value={this.state.lastOrdered} name="lastOrdered" placeholder="yyyy-mm-dd"></textarea>
                   </div>
               </div>
               <div className="modal__tablet">
                   <div className="modal__textbox-tablet">
                     <h4 className="modal__label">City</h4>
-                    <textarea className="modal__textbox" placeholder="City"></textarea>
+                    <textarea onChange={this.changeHandler} className="modal__textbox" value={this.state.location} name="location" placeholder="City"></textarea>
                   </div>
                   <div>
                     <h4 className="modal__label">Country</h4>
-                    <select className="modal__textbox modal__textbox--option">
+                    <select onChange={this.changeHandler} value={this.state.location} name="location" className="modal__textbox modal__textbox--option">
                         <option>Canada</option>
                         <option>US</option>
                         <option>Other</option>
@@ -78,7 +76,7 @@ submitHandler = (event) => {
               <div className="modal__tablet">
                 <div className="modal__textbox-tablet">
                   <h4 className="modal__label">Quantity</h4>
-                  <textarea className="modal__textbox" placeholder="0"></textarea>
+                  <textarea onChange={this.changeHandler} className="modal__textbox" value={this.state.quantity} name="quantity" placeholder="0"></textarea>
                 </div>
                 <div>
                   <h4 className="modal__label">Status</h4>
@@ -87,7 +85,7 @@ submitHandler = (event) => {
               </div>
               <div className="modal__tablet--description">
                 <h4 className="modal__label">Item Description</h4>
-                <textarea className="modal__textbox modal__textbox--description" placeholder="(Optional)"></textarea>
+                <textarea onChange={this.changeHandler} className="modal__textbox modal__textbox--description" value={this.state.description} name="description" placeholder="(Optional)"></textarea>
               </div>
               <div className="modal__tablet modal__tablet--desktop">
                 <button className="modal__button--save">Save</button>
