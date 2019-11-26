@@ -1,15 +1,56 @@
 import React from 'react';
 import Switch from '../ModalSwitch/Switch';
+import Axios from 'axios';
 import '../InventoryModal/styles.scss';
 
 
 class InventoryModal extends React.Component {
+  state = {
+    name: "",
+    description: "",
+    quantity: "",
+    lastOrdered: "",
+    location: "",
+    isInstock: "",
+    categories: "",
+    warehouseId: ""
+}
+
+changeHandler = (event) => {
+    if (event.target.value !== '') {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+}
+
+submitHandler = (event) => {
+    event.preventDefault();
+
+    Axios.post('http://localhost:8080/inventory', {
+        "name": this.state.name,
+        "description": this.state.address,
+        "quantity": this.state.location,
+        "lastOrdered": this.state.contactName,
+        "location": this.state.position,
+        "isInstock": this.state.phoneNumber,
+        "categories": this.state.email,
+        "warehouseId": this.state.categories
+    })
+        .then(response => {
+            alert("Your Product has been added")
+        })
+        .catch(error => {
+            alert("Something went wrong. We could not add your warehouse")
+        })
+}
+
 
     render() {
         return (
           <>
             <h2 className="modal__header" ref={subtitle => this.subtitle = subtitle}>Create New</h2>
-            <form>
+            <form onSubmit={this.submitHandler}>
               <div className="modal__tablet">
                   <div className="modal__textbox-tablet">
                     <h4 className="modal__label">Product</h4>

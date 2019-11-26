@@ -1,6 +1,6 @@
 const express = require ('express');
 const router = express.Router();
-const nanoid = require ('nanoid')
+const nanoid = require ('nanoid');
 const locationData = require('../data/locations.json')
 
 router.post('/', (request, response)=>{

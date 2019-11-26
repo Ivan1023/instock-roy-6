@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const invData = require('../data/inventory.json')
+const nanoid = require ('nanoid');
+const invData = require('../data/inventory.json');
 
 router.get('/', (request, response) => {
 
@@ -8,10 +9,28 @@ router.get('/', (request, response) => {
 
 })
 
-router.post('/', (req, res) => {
-    // console.log(req.body)
+router.post('/', (request, response)=>{
+  console.log(request.body)
+    
+  const data = request.body;
+  const id = nanoid(4);
 
-console.log(req)
+  const productUpload = {
+    "id": id,
+    "name": data.name,
+    "description": data.description,
+    "quantity": data.quantity,
+    "lastOrdered": data.lastOrdered,
+    "location":  data.location,
+    "isInstock": data.isInstock,
+    "categories": data.categories,
+    "warehouseId": `W${id}`
+  }
+
+  console.log('------Check to see if data is sent to data page------')
+
+  invData.push(productUpload);
+  response.send()
 })
 
 router.get('/:id', (request, response) => {
