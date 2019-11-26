@@ -4,7 +4,6 @@ const nanoid = require('nanoid');
 const locationData = require('../data/locations.json')
 
 router.post('/', (request, response) => {
-
     const data = request.body;
     const id = nanoid(4);
 
@@ -25,10 +24,8 @@ router.post('/', (request, response) => {
         },
         "inventoryCategories": data.categories
     }
-
-    console.log('------Check to see if data is sent to data page------')
-
-    if (locationData) {
+    
+    if (locationUpload.name && locationUpload.address && locationUpload.contact) {
         locationData.push(locationUpload);
     }
     response.send()

@@ -36,7 +36,8 @@ class WareHouseModal extends React.Component {
             "categories": this.state.categories
         })
             .then(response => {
-                alert("Your Warehouse has been added")
+                if (response.config.data !== '') alert("Your Warehouse has been added")
+                else alert('Please fill the entire form!')
             })
             .catch(error => {
                 alert("Something went wrong. We could not add your warehouse")

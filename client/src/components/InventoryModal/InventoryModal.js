@@ -29,7 +29,7 @@ class InventoryModal extends React.Component {
     let stockStatus = this.state.isInstock;
     stockStatus ? stockStatus = "In Stock" : stockStatus = "Out of stock"
 
-    let newProduct = {
+    Axios.post('http://localhost:8080/inventory', {
       "name": this.state.name,
       "description": this.state.description,
       "quantity": this.state.quantity,
@@ -37,10 +37,9 @@ class InventoryModal extends React.Component {
       "location": this.state.location,
       "isInstock": stockStatus,
       "categories": this.state.categories
-    }
-    Axios.post('http://localhost:8080/inventory', newProduct)
+    })
       .then(response => {
-        if (response.data !== '') alert("Your Product has been added")
+        if (response.config.data !== '') alert("Your Product has been added")
         else alert('Please fill the entire form!')
       })
       .catch(error => {

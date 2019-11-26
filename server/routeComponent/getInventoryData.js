@@ -24,11 +24,7 @@ router.post('/', (request, response) => {
     "categories": data.categories,
     "warehouseId": `W${id}`
   }
-
-  console.log('------Check to see if data is sent to data page------')
-  if (productUpload.name !== ' ' && productUpload.lastOrdered !== '' && productUpload.quantity !== '' && productUpload.categories !== '' && productUpload.isInstock !== '') {
     invData.push(productUpload);
-  }
   response.send()
 });
 
