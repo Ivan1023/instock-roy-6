@@ -4,6 +4,7 @@ import Axios from 'axios';
 import '../InventoryModal/styles.scss';
 
 
+
 class InventoryModal extends React.Component {
   state = {
     name: '',
@@ -45,6 +46,7 @@ submitHandler = (event) => {
 
 
     render() {
+      console.log(this.props)
         return (
           <>
             <h2 className="modal__header" ref={subtitle => this.subtitle = subtitle}>Create New</h2>
@@ -80,7 +82,7 @@ submitHandler = (event) => {
                 </div>
                 <div>
                   <h4 className="modal__label">Status</h4>
-                  <Switch/>
+                  <Switch />
                 </div>
               </div>
               <div className="modal__tablet--description">
